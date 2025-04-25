@@ -1,3 +1,92 @@
+
+/* featured cars section */
+
+.fearuredSection{
+
+}
+.fearuredSection_header{
+    color: #183B4E;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+.btn.ViewAllCars{
+    color: #F5EEDC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DDA853;
+    width: 13em;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.btn.ViewAllCars:hover{
+    color: #F5EEDC;
+    background-color: #183B4E;
+   
+}
+
+.featuredCard{
+    border: 1px solid #DDA853 ;
+    height: 20em;
+    box-shadow: 1px 1px 1px #DDA853 ;
+    display: flex;
+    align-items: start;
+    animation: scaleUp 4s ease 1s ;
+  
+}
+
+.featuredCardTitle{
+    color: #183B4E;
+    height: 2em;
+}
+.featuredCardType,.featuredCardModel,
+.featuredCardPrice , .featuredCardCategory
+{
+    color: #27548A;
+    font-weight: bold;
+
+}
+
+
+
+.featuredCardTypeSpan,.featuredCardModelSpan,
+.featuredCardCategorySpan,.featuredCardPriceSpan
+{
+    color: #DDA853;
+}
+
+.btn.bookNowBtn{
+    color: #27548A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5EEDC;
+    width: 13em;
+}
+.btn.bookNowBtn:hover{
+    color: #F5EEDC;
+    background-color: #27548A;
+    
+}
+.btn.bookNowBtn .bi.bi-arrow-right{
+    margin-left: 1em;
+
+}
+@keyframes scaleUp {
+    0% {
+        
+     transform: scale(0.25, 0.5);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+
+/* offer */
+
 .text-ofwhite {
     color: #F5EEDC;
 }
