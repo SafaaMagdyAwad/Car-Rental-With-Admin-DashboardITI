@@ -7,33 +7,181 @@
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <!-- bootstrap 5 icons cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+
 </head>
 
 <body>
-    <nav></nav>
-    <div class="cars"></div>
-    <div>
-        <section class="p-4 text-center bg-ofwhite border border-cofee">
-            <h2 class="text-darkblue p-4">🔥 Special Offers</h2>
-            <div class="container">
 
-                <div class="row mb-5" id="offers-container">
-
+    <!-- start navbar -->
+    <nav class="navbar navbar-expand-lg mb-3 ">
+        <div class="container">
+            <a class="navbar-brand fs-4 d-flex align-items-center" href="#"><i
+                    class="bi bi-car-front-fill"></i>RentCar</a>
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="sideBar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header text-white border-bottom">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="bi bi-car-front-fill"></i>RentCar
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+                    <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">Cars</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">Booking</a>
+                        </li>
+                    </ul>
+                    <div
+                        class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 contactUs_navItem">
+                        <a href="#">Contact Us <i class="bi bi-arrow-right"></i></a>
+                    </div>
 
                 </div>
-                <!-- Add more offer cards as needed -->
             </div>
-        </section>
-        <section class="p-4 text-center border-cofee">
-            <h2 class="text-darkblue p-4">🚗 our categories</h2>
-            <div class="container">
-                <div class="row  gap-0 row-gap-3" id="categories-container">
+        </div>
+    </nav>
 
-                </div>
-                <!-- Add more categories cards as needed -->
+    <!-- end navbar  -->
+
+
+    <!-- featured vehicles Section -->
+    <div class="contanier fearuredSection my-5 ">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
+                <h2 class="fearuredSection_header">Our Featured Vehicles</h2>
             </div>
-        </section>
+
+        </div>
+
+        <div class="row  d-flex justify-content-center align-items-center ">
+            <div class="card col-lg-3 col-md-12 m-3 featuredCard" style="width: 18rem">
+                <img src="" class="card-img-top featuredCardImage" alt="car" />
+                <div class="card-body">
+                    <h5 class="card-title featuredCardTitle" id="cardTitle1"></h5>
+                    <!-- carousel -->
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <p class="featuredCardType">Type : <span class="featuredCardTypeSpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardModel">Model : <span class="featuredCardModelSpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardCategory">Category : <span
+                                        class="featuredCardCategorySpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardPrice">Price : <span class="featuredCardPriceSpan"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn bookNowBtn ">Book Now <i class="bi bi-arrow-right "></i></a>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-md-12 m-3 featuredCard" style="width: 18rem">
+                <img src="..." class="card-img-top featuredCardImage" alt="car" />
+                <div class="card-body">
+                    <h5 class="card-title featuredCardTitle" id="cardTitle2"></h5>
+                    <!-- carousel -->
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <p class="featuredCardType">Type : <span class="featuredCardTypeSpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardModel">Model : <span class="featuredCardModelSpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardCategory">Category : <span
+                                        class="featuredCardCategorySpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardPrice">Price : <span class="featuredCardPriceSpan"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn bookNowBtn ">Book Now <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="card col-lg-3 col-md-12 m-3 featuredCard" style="width: 18rem">
+                <img src="..." class="card-img-top featuredCardImage" alt="car" />
+                <div class="card-body">
+                    <h5 class="card-title featuredCardTitle " id="cardTitle3"></h5>
+                    <!-- carousel -->
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <p class="featuredCardType">Type : <span class="featuredCardTypeSpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardModel">Model : <span class="featuredCardModelSpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardCategory">Category : <span
+                                        class="featuredCardCategorySpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardPrice">Price : <span class="featuredCardPriceSpan"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn bookNowBtn">Book Now <i class="bi bi-arrow-right "></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
+                <button class="btn ViewAllCars">View All Cars <i class="bi bi-arrow-right ms-2"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <section class="p-4 text-center bg-ofwhite border border-cofee">
+        <h2 class="text-darkblue p-4">🔥 Special Offers</h2>
+        <div class="container">
+
+            <div class="row mb-5" id="offers-container">
+
+
+            </div>
+            <!-- Add more offer cards as needed -->
+        </div>
+    </section>
+    <section class="p-4 text-center border-cofee">
+        <h2 class="text-darkblue p-4">🚗 our categories</h2>
+        <div class="container">
+            <div class="row  gap-0 row-gap-3" id="categories-container">
+
+            </div>
+            <!-- Add more categories cards as needed -->
+        </div>
+    </section>
 
     </div>
     <script src="../js/home.js"></script>
