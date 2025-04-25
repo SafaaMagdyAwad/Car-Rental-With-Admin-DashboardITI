@@ -1,0 +1,53 @@
+/* colors  */
+
+
+
+eman{
+    background-color:#DDA853 ;
+    background-color:#183B4E;
+    background-color:#27548A ;
+    background-color:#F5EEDC ;
+   
+   }
+   
+   
+   
+   
+   /* navbar */
+   
+   .navbar.navbar-expand-lg{
+       background-color:#F5EEDC ;
+   }
+   .nav-link,.navbar-brand{
+       color:#183B4E ;
+   }
+   
+   .nav-link:hover ,.nav-link:active ,.nav-link.active,.navbar-brand:hover{ 
+       
+       color:#DDA853 !important ;
+   }
+   .bi.bi-car-front-fill{
+       color: #DDA853;
+       font-size: 1.5em;
+       padding: 0px 0.25em;
+   }
+   
+   .contactUs_navItem{
+       background-color: #DDA853;
+       padding: 0px 2em;
+       border-radius: 5%;
+   }
+   
+   .contactUs_navItem a{
+       text-decoration: none;
+       color: #F5EEDC;
+       letter-spacing: 0.25em;
+   }
+   
+   @media(max-width :991px){
+       .sideBar{
+           background: rgb(255, 255, 255 , 0.15);
+           backdrop-filter: blur(10px);
+       
+       }
+   }
