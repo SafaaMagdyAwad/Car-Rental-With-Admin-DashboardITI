@@ -1,11 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact us</title>
-</head>
-<body>
-    <h2>contact us</h2>
-</body>
-</html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us - Car Rental System</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+        <link rel="stylesheet" href="../css/Contactus.css">
+        <link rel="stylesheet"
+            href="../css/navbar.css">
+    </head>
+    <body>
+
+        <!-- start navbar -->
+        <nav class="navbar navbar-expand-lg mb-3 ">
+            <div class="container">
+                <a class="navbar-brand fs-4 d-flex align-items-center"
+                    href="#"><i class="bi bi-car-front-fill"></i>RentCar</a>
+                <button class="navbar-toggler shadow-none border-0"
+                    type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="sideBar offcanvas offcanvas-start" tabindex="-1"
+                    id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header text-white border-bottom">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i
+                                class="bi bi-car-front-fill"></i>RentCar</h5>
+                        <button type="button"
+                            class="btn-close btn-close-white shadow-none"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div
+                        class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+                        <ul
+                            class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" aria-current="page"
+                                    href="#">Home</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link" href="#">Cars</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link" href="#">Booking</a>
+                            </li>
+                        </ul>
+                        <div
+                            class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 contactUs_navItem">
+                            <a href="#">Contact Us <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- end navbar  -->
+        <div class="contact-container">
+            <div class="contact-header">
+                <i class="fas fa-car"></i>
+                <h1>Contact Us</h1>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="contact-section">
+                        <h2 class="section-title">Contact Form</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Full
+                                    Name</label>
+                                <input type="text" class="form-control"
+                                    id="fullName">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email
+                                    Address</label>
+                                <input type="email" class="form-control"
+                                    id="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject"
+                                    class="form-label">Subject</label>
+                                <input type="text" class="form-control"
+                                    id="subject">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message"
+                                    class="form-label">Message</label>
+                                <textarea class="form-control"
+                                    id="message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-send">
+                                <i class="fas fa-paper-plane me-2"></i> Send
+                                Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="contact-section">
+                        <h2 class="section-title">Our Location</h2>
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d13673.87194100402!2d31.354496!3d31.041069!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDAyJzI3LjkiTiAzMcKwMjEnMTYuMiJF!5e0!3m2!1sen!2sus!4v1745695815545!5m2!1sen!2sus"
+                                width="600" height="450" style="border:0;"
+                                allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">eeeeeeeeee
+                                allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="contact-section">
+                        <h2 class="section-title">Contact Information</h2>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-title">Address</div>
+                            <div class="contact-info-content">60 El-Gomhourya,
+                                st. Mit Khamis WA Kafr Al Mougi, El Mansoura 1,
+                                Dakahlia Governorate</div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-title">Phone</div>
+                            <div class="contact-info-content">+20 (106)
+                                567-839</div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-title">Email</div>
+                            <div
+                                class="contact-info-content">info@carrental.com</div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-title">Working Hours</div>
+                            <div class="contact-info-content">
+                                Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 10:00 AM - 4:00 PM
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-section">
+                        <h2 class="section-title">Directions</h2>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-title">ITI Mansoura
+                                Branch</div>
+                            <div class="contact-info-content">
+                                Inside Faculty of Computers and
+                                Information<br>
+                                Mansoura University<br>
+                                El-Gomhoria Street<br>
+                                Mansoura, Egypt
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <script
+                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="../js/Contactus.js">
+     
+    </script>
+            </body>
+        </html>
