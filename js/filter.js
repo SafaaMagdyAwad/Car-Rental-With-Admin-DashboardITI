@@ -3,21 +3,23 @@ export function filter() {
 
 
     let availableCond = document.getElementById("availability").checked;
+
     let rawCatCond = document.querySelectorAll(".cat");
     let catCond = [...rawCatCond].filter(element => element.checked).map((element) => element.value);
 
     let to500 = document.getElementById("to500").checked;
     let to1000 = document.getElementById("to1000").checked;
     let from1000 = document.getElementById("from1000").checked;
-    /* let rawPriceCond = document.querySelectorAll(".price");
-    let priceCond = [...rawPriceCond].filter(element => element.checked).map((element) => element.value); */
-    //console.log([...filters]);
-    //let conds = [...filters].filter((element) => element.checked);
-    //console.log(conds);
+
+    let filterElements = [ ...document.querySelectorAll(".filter")].filter(element => element.checked);
+    
     let cars = JSON.parse(localStorage.getItem("cars"));
-    /*  cars.forEach((element)=>{
-         if(car)
-     }); */
+    
+
+    if (filterElements.length <= 0) {
+        document.getElementById("filterError").style.display = "block";
+    }
+
 
     if (availableCond) {
         cars.forEach((element) => {
@@ -53,40 +55,44 @@ export function filter() {
             }
         })
     }
-    console.log("----", valid);
-    console.log("****", catCond);
 
     let parent = document.getElementById("cars-container");
+
+
     if (valid.size <= 0) {
-        /* let div = document.createElement("div");
-        div.className = "col-sm-12 col-md-4 col-lg-3 my-2";
-        let card = parent.appendChild(div);
-        card.innerHTML = `<div class="text-danger">Not found in cars list</div>`; */
+
         document.getElementById("filterError").style.display = "block";
+        document.getElementById("filterError").innerText = "No valid cars!";
+
     }else{
+
         parent.innerHTML = '';
         document.getElementById("filterError").style.display = "none";
+        
     }
+
+
     valid.forEach(car => {
         let div = document.createElement("div");
-        div.className = "col-sm-12 col-md-4 col-lg-3 my-2";
+        div.className = "col-sm-12 col-md-4 my-2";
         let card = parent.appendChild(div);
         card.innerHTML = `
-                <div class="card">
-                
-                <img src="../images/cars/${car.image}" class="card-img-top mb-2" style="height: 200px;">
-                <div class="card-body">
-                  <h5 class="card-title text-center">${car.brand}</h5>
-                  <p class="card-text">model: ${car.model}</p>
-                  <p class="card-text">type: ${car.type}</p>
-                  <p class="card-text">price: ${car.price}/day</p>
-                  <p class="card-text">${car.available ? "available" : "not available"}</p>
-                  <p class="card-text">category: ${car.category}</p>
-                  <div class="text-center">
-                    <a href="#" class="btn btn-primary ">Go somewhere</a>
-                  </div>
+            <div class="card h-100 d-flex flex-column">
+                <img src="../images/cars/${car.image}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">${car.prand}</h5>
+                    <p class="card-text m-0"><b>Model:</b> ${car.model}</p>
+                    <p class="card-text m-0"><b>Type:</b> ${car.type}</p>
+                    <p class="card-text m-0"><b>Price:</b> ${car.price}/day</p>
+                    <p class="card-text m-0 ${car.available ? "text-success" : "text-danger"}">
+                        <b>${car.available ? "Available" : "Not available"}</b>
+                    </p>
+                    <p class="card-text m-0 mb-2"><b>Category:</b> ${car.category}</p>
+                    <div class="mt-auto mx-auto">
+                        <a href="#" class="btn btn-primary text-white bg-blue">Car Details</a>
+                    </div>
                 </div>
-                </div>`;
+            </div>`;
     });
 
 }
