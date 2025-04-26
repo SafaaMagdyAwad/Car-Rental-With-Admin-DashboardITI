@@ -22,8 +22,8 @@ export function showCarList() {
                     <b>${car.available ? "Available" : "Not available"}</b>
                 </p>
                 <p class="card-text m-0 mb-2"><b>Category:</b> ${car.category}</p>
-                <div class="mt-auto mx-auto">
-                    <a href="#" class="btn btn-primary text-white bg-blue">Car Details</a>
+                <div class="mt-auto">
+                    <a href="#" class="btn btn-primary text-white bg-blue w-100">Car Details</a>
                 </div>
             </div>
         </div>`;
