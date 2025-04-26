@@ -1,0 +1,98 @@
+[33mcommit f57fd3a49553fe1d4be75db7150df9a915006399[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmohmed[m[33m)[m
+Author: Mohmed <mezoxmoonx@gmail.com>
+Date:   Thu Apr 24 23:34:39 2025 +0200
+
+    add login and contactus
+
+[33mcommit a16c4e2b154895abc4b7d125981a0e166dc7b480[m[33m ([m[1;31morigin/mohmed[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 8886676 7e1258a
+Author: EmanIbrahimIbrahim <emanibrahimibrahimAbdelgawwad@gmail.com>
+Date:   Thu Apr 24 22:14:06 2025 +0200
+
+    Merge pull request #6 from SafaaMagdyAwad/Eman
+    
+    added home1.html to html folder
+
+[33mcommit 7e1258a60fff418a655e72ddb2f5b4296dacf967[m[33m ([m[1;31morigin/Eman[m[33m)[m
+Author: emanibrahim <emanibrahimibrahimabdelgawwad@gmail.com>
+Date:   Thu Apr 24 22:08:27 2025 +0200
+
+    added home1.html to html folder
+
+[33mcommit 8886676e4d728deb94d9a6815abcc30c06968f66[m
+Merge: 04fc145 e2d0c6d
+Author: Safaa Magdy <139927841+SafaaMagdyAwad@users.noreply.github.com>
+Date:   Thu Apr 24 15:51:43 2025 +0200
+
+    Merge pull request #4 from SafaaMagdyAwad/safaa
+    
+    structure
+
+[33mcommit 04fc1451b671bb6f4a08946daa1b223e868b3dd2[m
+Merge: bd757b6 db3afd0
+Author: Safaa Magdy <139927841+SafaaMagdyAwad@users.noreply.github.com>
+Date:   Thu Apr 24 14:36:07 2025 +0200
+
+    Merge pull request #3 from SafaaMagdyAwad/car-list
+    
+    added car list file
+
+[33mcommit e2d0c6d8704209de95b0626f7a556c59fac45747[m
+Author: SafaaMagdyAwad <engsafaamagdy1024@gmail.com>
+Date:   Thu Apr 24 14:34:05 2025 +0200
+
+    structure
+
+[33mcommit db3afd09f607db28e15d514b4ddc36d9f5dc4fb9[m[33m ([m[1;31morigin/car-list[m[33m)[m
+Author: eslamlaiali <islamlaiali@gmail.com>
+Date:   Thu Apr 24 14:10:43 2025 +0200
+
+    added car list file
+
+[33mcommit bd757b6e794c938f6c61a29ec5c1b184cfb1eb31[m
+Merge: 86690de eea5926
+Author: Safaa Magdy <139927841+SafaaMagdyAwad@users.noreply.github.com>
+Date:   Thu Apr 24 13:48:38 2025 +0200
+
+    Merge pull request #2 from SafaaMagdyAwad/safaa
+    
+    commit
+
+[33mcommit eea5926e7aa305ef974a0e4fe5677bc1bff536ab[m
+Author: SafaaMagdyAwad <engsafaamagdy1024@gmail.com>
+Date:   Thu Apr 24 13:13:09 2025 +0200
+
+    commit
+
+[33mcommit 86690de4c9a87fe151bfacb8625921018985b821[m
+Merge: e3000ec 3e4da62
+Author: Safaa Magdy <139927841+SafaaMagdyAwad@users.noreply.github.com>
+Date:   Thu Apr 24 11:07:55 2025 +0200
+
+    Merge pull request #1 from SafaaMagdyAwad/safaa
+    
+    commit
+
+[33mcommit 3e4da6219bec635178701b53ee7347a812306ff1[m
+Author: SafaaMagdyAwad <engsafaamagdy1024@gmail.com>
+Date:   Thu Apr 24 10:57:20 2025 +0200
+
+    commit
+
+[33mcommit e3000ec6f52aec424d64e8ada02766f9e331b5f9[m
+Author: SafaaMagdyAwad <engsafaamagdy1024@gmail.com>
+Date:   Thu Apr 24 10:50:36 2025 +0200
+
+    read readme
+
+[33mcommit 142a05c1221c06a1385bdcb8c0e5c36468ba307c[m
+Author: SafaaMagdyAwad <engsafaamagdy1024@gmail.com>
+Date:   Wed Apr 23 21:27:13 2025 +0200
+
+    try
+
+[33mcommit d09ecee0e94ea2f531ab43da502d9b9895573b42[m
+Author: SafaaMagdyAwad <engsafaamagdy1024@gmail.com>
+Date:   Wed Apr 23 21:23:41 2025 +0200
+
+    first commit
