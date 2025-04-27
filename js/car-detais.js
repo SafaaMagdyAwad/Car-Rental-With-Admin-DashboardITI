@@ -1,11 +1,8 @@
 let bookedCars = JSON.parse(localStorage.getItem("bookedCars")) || [];
-
-
-
 const params = new URLSearchParams(window.location.search);
 const carId = params.get("id");
 let car = {};
-console.log(carId);
+// console.log(carId);
 
 let cars = JSON.parse(localStorage.getItem("cars")) || [];
 console.log(cars);
@@ -16,7 +13,7 @@ cars.forEach(acar => {
     }
 });
 
-console.log(car);
+// console.log(car);
 
 let carCard = document.getElementById("carCard");
 
@@ -76,20 +73,18 @@ if (Object.keys(car).length === 0) {
         button.setAttribute("data-bs-target", "#exampleModal");
         button.className = "form-control btn btn-primary pt-2 pb-2";
         button.type = "button";
-        
-       
         button.innerText = "Book Now 🎉 !";
         cardbody.appendChild(button);
 
     } else {
 
-        let button1 = document.createElement("button");
-        button1.className = "form-control btn btn-danger pt-2 pb-2";
-        button1.innerText = "This Car is not avilable right now 😥";
-        cardbody.appendChild(button1);
+        let button = document.createElement("button");
+        button.className = "form-control btn btn-danger pt-2 pb-2";
+        button.innerText = "This Car is not avilable right now 😥";
+        cardbody.appendChild(button);
     }
 
-    function submitBooking() {
+   
         
         let submitbooking = document.getElementById("submitbooking");
     // console.log(submitbooking);
@@ -134,7 +129,7 @@ if (Object.keys(car).length === 0) {
                 }
             }
         });
-    }
+    
 
 
 
