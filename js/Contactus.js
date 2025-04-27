@@ -1,104 +1,60 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Form elements
-    const contactForm = document.getElementById('contactForm');
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const subjectInput = document.getElementById('subject');
-    const messageInput = document.getElementById('message');
-    const successMessage = document.getElementById('successMessage');
+// Select form and inputs
+const form = document.querySelector('form');
+const fullNameInput = document.getElementById('fullName');
+const emailInput = document.getElementById('email');
+const subjectInput = document.getElementById('subject');
+const messageInput = document.getElementById('message');
 
-    // Add input event listeners for validation
-    nameInput.addEventListener('input', validateName);
-    emailInput.addEventListener('input', validateEmail);
-    subjectInput.addEventListener('input', validateSubject);
-    messageInput.addEventListener('input', validateMessage);
+// Handle form submit
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); 
 
-    // Form submission
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+    const fullName = fullNameInput.value.trim();
+    const email = emailInput.value.trim();
+    const subject = subjectInput.value.trim();
+    const message = messageInput.value.trim();
 
-        const nameValid = validateName();
-        const emailValid = validateEmail();
-        const subjectValid = validateSubject();
-        const messageValid = validateMessage();
+    const hasNumber = /\d/;
 
-        if (nameValid && emailValid && subjectValid && messageValid) {
-            // In a real application, you would send the form data to a server here
-            // For demo purposes, we'll just show a success message
-
-            // Show success message
-            successMessage.style.display = 'block';
-
-            // Reset form
-            contactForm.reset();
-
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-
-            // Scroll to show the success message
-            successMessage.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            // Show shake animation on form
-            contactForm.classList.add('shake-animation');
-            setTimeout(() => {
-                contactForm.classList.remove('shake-animation');
-            }, 500);
-        }
-    });
-
-    // Validation functions
-    function validateName() {
-        const name = nameInput.value.trim();
-        const isValid = name.length >= 2;
-
-        if (!isValid && name.length > 0) {
-            document.getElementById('nameError').style.display = 'block';
-            return false;
-        } else {
-            document.getElementById('nameError').style.display = 'none';
-            return name.length > 0 ? isValid : false;
-        }
+    // Validation
+    if (!fullName || !email || !subject || !message) {
+        alert('Please fill in all fields.');
+        return;
     }
 
-    function validateEmail() {
-        const email = emailInput.value.trim();
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const isValid = re.test(email);
-
-        if (!isValid && email.length > 0) {
-            document.getElementById('emailError').style.display = 'block';
-            return false;
-        } else {
-            document.getElementById('emailError').style.display = 'none';
-            return email.length > 0 ? isValid : false;
-        }
+    if (hasNumber.test(fullName)) {
+        alert('Full Name must not contain numbers.');
+        return;
     }
 
-    function validateSubject() {
-        const subject = subjectInput.value.trim();
-        const isValid = subject.length >= 3;
-
-        if (!isValid && subject.length > 0) {
-            document.getElementById('subjectError').style.display = 'block';
-            return false;
-        } else {
-            document.getElementById('subjectError').style.display = 'none';
-            return subject.length > 0 ? isValid : false;
-        }
+    if (hasNumber.test(subject)) {
+        alert('Subject must not contain numbers.');
+        return;
     }
 
-    function validateMessage() {
-        const message = messageInput.value.trim();
-        const isValid = message.length >= 10;
+    // Get existing contacts from localStorage or create empty array
+    let contacts = JSON.parse(localStorage.getItem('contact')) || [];
 
-        if (!isValid && message.length > 0) {
-            document.getElementById('messageError').style.display = 'block';
-            return false;
-        } else {
-            document.getElementById('messageError').style.display = 'none';
-            return message.length > 0 ? isValid : false;
-        }
-    }
+    let newId = contacts.length > 0 ? contacts[contacts.length - 1].id + 1 : 1;
+
+    const newContact = {
+        id: newId,
+        "user-name": fullName,
+        email: email,
+        subject: subject,
+        message: message,
+        read: "false"
+    };
+
+    // Add new contact to array
+    contacts.push(newContact);
+
+    // Save updated array to localStorage
+    localStorage.setItem('contact', JSON.stringify(contacts));
+
+    // Show success message
+    alert('Your message has been sent successfully!');
+
+    // Clear form fields
+    form.reset();
 });
