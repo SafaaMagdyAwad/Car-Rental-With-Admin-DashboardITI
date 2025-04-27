@@ -125,7 +125,7 @@ let featuredCardImages=document.querySelectorAll(".featuredCardImage");
 
 featuredCardImages.forEach((featuredCardImage , index)=> {
     
-    featuredCardImage.src= `../images/cars/${cars[index].image}`;
+    featuredCardImage.src= `images/cars/${cars[index].image}`;
     
 });
 featuredCardTitles.forEach((featuredCardTitle , index)=> {
@@ -181,7 +181,7 @@ featuredCardCategorySpans.forEach((featuredCardCategorySpan , index)=> {
 
     col.innerHTML = `
                 <div class="card shadow p-3 mb-5 mb-5 bg-body-tertiary rounded animation" style="height:100%">
-                    <img src="../images/cars/${offer.image}"  height="300px" width="100%"  class="card-img-top" alt="${offer.title}">
+                    <img src="images/cars/${offer.image}"  height="300px" width="100%"  class="card-img-top" alt="${offer.title}">
                     <div class="card-body">
                         <h3 class="card-title text-darkblue">${offer.title}</h3>
                         <p class="card-text text-lightblue">${offer.discription}</p>
@@ -210,7 +210,7 @@ featuredCardCategorySpans.forEach((featuredCardCategorySpan , index)=> {
 
     col.innerHTML = `
             <div class="card shadow p-3  bg-ofwhite border-cofee rounded animation" style="height:100%">
-                <img src="../images/categories/${category.image}" height="300px" width="100%"  class="card-img-top" alt="${category["category-title"]}">
+                <img src="images/categories/${category.image}" height="300px" width="100%"  class="card-img-top" alt="${category["category-title"]}">
                 <div class="card-body">
                     <h3 class="card-title text-lightblue">${category["category-title"]}</h3>
                     <a href="#" class="btn btn-primary mt-4">Explore more 🌟 </a>

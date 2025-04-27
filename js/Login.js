@@ -89,7 +89,7 @@ function authenticateAdmin(email, password, rememberMe) {
         alert(`Welcome ${admin.name}! Redirecting to dashboard...`);
 
         // Redirect to dashboard
-        window.location.href = '../html/home.html';
+        window.location.href = 'index.html';
     } else {
         // Show error message with animation
         const loginContainer = document.querySelector('.login-container');

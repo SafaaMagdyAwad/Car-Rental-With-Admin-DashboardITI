@@ -30,7 +30,7 @@ if (Object.keys(car).length === 0) {
 
 
     let image = document.createElement("img");
-    image.src = `../images/cars/${car.image}`;
+    image.src = `images/cars/${car.image}`;
     image.className = "img-fluid card-img-top";
     image.alt = car.prand;
 
