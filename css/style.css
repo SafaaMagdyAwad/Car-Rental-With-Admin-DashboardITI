@@ -1,144 +1,135 @@
-
 /* featured cars section */
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
 
-.fearuredSection{
-
+/* .fearuredSection {
+} */
+.fearuredSection_header {
+  color: #183b4e;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
 }
-.fearuredSection_header{
-    color: #183B4E;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-}
-.btn.ViewAllCars{
-    color: #F5EEDC;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #DDA853;
-    width: 13em;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-.btn.ViewAllCars:hover{
-    color: #F5EEDC;
-    background-color: #183B4E;
-   
+.btn.ViewAllCars {
+  color: #f5eedc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dda853;
+  width: 13em;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-.featuredCard{
-    border: 1px solid #DDA853 ;
-    height: 20em;
-    box-shadow: 1px 1px 1px #DDA853 ;
-    display: flex;
-    align-items: start;
-    animation: scaleUp 4s ease 1s ;
-  
+.btn.ViewAllCars:hover {
+  color: #f5eedc;
+  background-color: #183b4e;
 }
 
-.featuredCardTitle{
-    color: #183B4E;
-    height: 2em;
-}
-.featuredCardType,.featuredCardModel,
-.featuredCardPrice , .featuredCardCategory
-{
-    color: #27548A;
-    font-weight: bold;
-
+.featuredCard {
+  border: 1px solid #dda853;
+  height: 20em;
+  box-shadow: 1px 1px 1px #dda853;
+  display: flex;
+  align-items: start;
+  animation: scaleUp 4s ease 1s;
 }
 
-
-
-.featuredCardTypeSpan,.featuredCardModelSpan,
-.featuredCardCategorySpan,.featuredCardPriceSpan
-{
-    color: #DDA853;
+.featuredCardTitle {
+  color: #183b4e;
+  height: 2em;
+}
+.featuredCardType,
+.featuredCardModel,
+.featuredCardPrice,
+.featuredCardCategory {
+  color: #27548a;
+  font-weight: bold;
 }
 
-.btn.bookNowBtn{
-    color: #27548A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #F5EEDC;
-    width: 13em;
+.featuredCardTypeSpan,
+.featuredCardModelSpan,
+.featuredCardCategorySpan,
+.featuredCardPriceSpan {
+  color: #dda853;
 }
-.btn.bookNowBtn:hover{
-    color: #F5EEDC;
-    background-color: #27548A;
-    
-}
-.btn.bookNowBtn .bi.bi-arrow-right{
-    margin-left: 1em;
 
+.btn.bookNowBtn {
+  color: #27548a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5eedc;
+  width: 13em;
+}
+.btn.bookNowBtn:hover {
+  color: #f5eedc;
+  background-color: #27548a;
+}
+.btn.bookNowBtn .bi.bi-arrow-right {
+  margin-left: 1em;
 }
 @keyframes scaleUp {
-    0% {
-        
-     transform: scale(0.25, 0.5);
-    }
+  0% {
+    transform: scale(0.25, 0.5);
+  }
 
-    100% {
-        transform: scale(1, 1);
-    }
+  100% {
+    transform: scale(1, 1);
+  }
 }
-
 
 /* offer */
 
 .text-ofwhite {
-    color: #F5EEDC;
+  color: #f5eedc;
 }
 
 .bg-ofwhite {
-    background-color: #F5EEDC;
+  background-color: #f5eedc;
 }
 
 .text-darkblue {
-    color: #183B4E;
+  color: #183b4e;
 }
 
 .bg-blue {
-    background-color: #183B4E;
+  background-color: #183b4e;
 }
 
 .text-lightblue {
-    color: #27548A;
+  color: #27548a;
 }
 
 .bg-lightblue {
-    background-color: #27548A;
+  background-color: #27548a;
 }
 
 .text-cofee {
-    color: #DDA853;
+  color: #dda853;
 }
 
 .bg-cofee {
-    background-color: #DDA853;
+  background-color: #dda853;
 }
 
 .border-cofee {
-    border: 1px solid #DDA853;
+  border: 1px solid #dda853;
 }
 
 @keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animation {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
 }
