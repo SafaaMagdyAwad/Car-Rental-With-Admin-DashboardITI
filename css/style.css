@@ -1,5 +1,8 @@
 
 /* featured cars section */
+body{
+    overflow-x: hidden;
+}
 
 .fearuredSection{
 
