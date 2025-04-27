@@ -12,7 +12,7 @@ export function showCarList() {
 
     card.innerHTML = `
         <div class="card h-100 d-flex flex-column">
-            <img src="../images/cars/${car.image}" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <img src="images/cars/${car.image}" class="card-img-top" style="height: 200px; object-fit: cover;">
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title">${car.prand}</h5>
                 <p class="card-text m-0"><b>Model:</b> ${car.model}</p>
