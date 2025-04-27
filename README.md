@@ -44,10 +44,14 @@ image
 <p>
 booked-cars=[{
 car-id
-date
-time
-confirmed====>confirmation from the user
+pick-up-date
+pick-up-time
+drop-date
+drop-time
+user-name
+user-email
 }];
+store if confirmed====>confirmation from the user
 </p>
 <hr>
 <p>
@@ -57,6 +61,7 @@ user-name
 email
 subject
 message
+read="false"
 }]
 </p>
 <hr>
