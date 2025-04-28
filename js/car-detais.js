@@ -1,6 +1,7 @@
 let bookedCars = JSON.parse(localStorage.getItem("bookedCars")) || [];
 const params = new URLSearchParams(window.location.search);
 const carId = params.get("id");
+let user = JSON.parse(sessionStorage.getItem("user"));
 let car = {};
 // console.log(carId);
 
@@ -65,15 +66,24 @@ if (Object.keys(car).length === 0) {
     };
 
     // console.log(car.avilable);
-
+    let renthistory = document.createElement("a");
+    renthistory.className = "form-control btn btn-success mb-4 mt-4 pt-2 pb-2";
+    renthistory.innerText = "Show Car Rental History";
+    renthistory.href = "rentalhistory.html";
+    cardbody.appendChild(renthistory);
     if (car.avilable) {
         // Append the modal only once when car is available
         let button = document.createElement("button");
-        button.setAttribute("data-bs-toggle", "modal");
-        button.setAttribute("data-bs-target", "#exampleModal");
         button.className = "form-control btn btn-primary pt-2 pb-2";
-        button.type = "button";
-        button.innerText = "Book Now 🎉 !";
+        button.type = button;
+        if (!user) {
+            //user is not logedin
+            button.innerText = "login";
+        } else {
+            button.setAttribute("data-bs-toggle", "modal");
+            button.setAttribute("data-bs-target", "#exampleModal");
+            button.innerText = "Book Now 🎉 !";
+        }
         cardbody.appendChild(button);
 
     } else {
@@ -84,52 +94,53 @@ if (Object.keys(car).length === 0) {
         cardbody.appendChild(button);
     }
 
-   
-        
-        let submitbooking = document.getElementById("submitbooking");
+
+
+    let submitbooking = document.getElementById("submitbooking");
     // console.log(submitbooking);
-    
-        submitbooking.addEventListener("click", (e) => {
-    
-            e.preventDefault();
-            console.log("im in submit button");
-            let pickDate = document.getElementById("pickDate").value;
-            let pickTime = document.getElementById("pickTime").value;
-            let dropDate = document.getElementById("dropDate").value;
-            let dropTime = document.getElementById("dropTime").value;
-            let name = document.getElementById("name").value.trim();
-            let email = document.getElementById("email").value.trim();
-            //validation
-            console.log(!pickDate);
-            if (!pickDate || !pickTime || !dropDate || !dropTime || !name || !email) {
-                alert("Please Enter Valid Data");
-            } else if (!validateEmail(email)) {
-                alert("your Email is inValid ");
-            } else {
-                //asking user for confirmation
-                let con = confirm("Are You Shure You Want to Book This Car?");
-    
-                // if user confirmed
-                if (con) {
-                    //storing the data
-    
-                    bookobject = {
-                        "car-id": carId,
-                        "pick-up-date": pickDate,
-                        "pick-up-time": pickTime,
-                        "drop-date": dropDate,
-                        "drop-time": dropTime,
-                        "user-name": name,
-                        "user-email": email,
-                    }
-                    bookedCars.push(bookobject);
-                    //save in local storage
-                    localStorage.setItem("bookedCars", JSON.stringify(bookedCars));
-                    alert("You booked this car successfully 😊 ");
+
+    submitbooking.addEventListener("click", (e) => {
+
+        e.preventDefault();
+        console.log("im in submit button");
+        let pickDate = document.getElementById("pickDate").value;
+        let pickTime = document.getElementById("pickTime").value;
+        let dropDate = document.getElementById("dropDate").value;
+        let dropTime = document.getElementById("dropTime").value;
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        //validation
+        console.log(!pickDate);
+        if (!pickDate || !pickTime || !dropDate || !dropTime || !name || !email) {
+            alert("Please Enter Valid Data");
+        } else if (!validateEmail(email)) {
+            alert("your Email is inValid ");
+        } else {
+            //asking user for confirmation
+            let con = confirm("Are You Shure You Want to Book This Car?");
+
+            // if user confirmed
+            if (con) {
+                //storing the data
+console.log(user);
+                bookobject = {
+                    "car-id": carId,
+                    "pick-up-date": pickDate,
+                    "pick-up-time": pickTime,
+                    "drop-date": dropDate,
+                    "drop-time": dropTime,
+                    "user-name": user.name,
+                    "user-email": user.email,
+                    "status": "pending",
                 }
+                bookedCars.push(bookobject);
+                //save in local storage
+                localStorage.setItem("bookedCars", JSON.stringify(bookedCars));
+                alert("You booked this car successfully 😊 ");
             }
-        });
-    
+        }
+    });
+
 
 
 
@@ -139,6 +150,7 @@ if (Object.keys(car).length === 0) {
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         return emailPattern.test(email);
     }
+
 
 
 
