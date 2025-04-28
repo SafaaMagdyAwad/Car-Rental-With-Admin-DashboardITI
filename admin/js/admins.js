@@ -78,9 +78,9 @@ function displayAdmins() {
                   <td>${admin.name}</td>
                   <td>${admin.email}</td>
                   <td>${admin.password}</td>
-                  <td>${admin.role}</td>
+                  <td >${admin.role}</td>
                   <td>${admin.createdAt}</td>
-                  <td><i class="bi bi-person-x-fill text-danger deleteAdmin" data-id='${admin.id}'></td>
+                  <td><i class="bi bi-person-x-fill text-danger deleteAdmin" data-id='${admin.id}' data-role='${admin.role}'></td>
             
                   `;
       } else {
@@ -91,9 +91,9 @@ function displayAdmins() {
                   <td>${admin.name}</td>
                   <td>${admin.email}</td>
                   <td>${admin.password}</td>
-                  <td>${admin.role}</td>
+                  <td >${admin.role}</td>
                   <td>${admin.createdAt}</td>
-                  <td><i class="bi bi-person-x-fill text-danger deleteAdmin" data-id='${admin.id}' ></i></td>
+                  <td><i class="bi bi-person-x-fill text-danger deleteAdmin" data-id='${admin.id}' data-role='${admin.role}' ></i></td>
                   `;
       }
     });
@@ -137,24 +137,23 @@ function createAdmin() {
 }
 
 // delete Admin
- function deleteAdmin(superAdmin_id , admin_id) {
+ function deleteAdmin(superAdmin_id , admin_id , role) {
     let confirmed = confirm("are you sure to delete this admin?");
     if (confirmed == true) {
         let admins = JSON.parse(localStorage.getItem("admins")) || [];
         for (let index = 0; index < admins.length; index++) {
           console.log(admin_id);
+          console.log(admins[index].role);
           
-            if( superAdmin_id==1 && admins[index].id == admin_id  && admin_id != 1 && admins[index].role !=="Superadmin"){
+            if( superAdmin_id==1 && admins[index].id == admin_id  && admin_id != 1  && role !="Superadmin"){
                 admins.splice(index , 1);
                 localStorage.setItem("admins" , JSON.stringify(admins));
                 location.reload();
+
                 
             }
-            else if(superAdmin_id==1 && admin_id == 1){
-                alert("you can't delete super Admin");
-                break;
-            }
-            else if(admins[index].role ==="Superadmin" ){
+            
+            else if(role =="Superadmin"   ){
               alert("you can't delete super Admin");
               break;
           }
@@ -169,7 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("AddNewAdmin").addEventListener("click", createAdmin);
   document.querySelectorAll(".deleteAdmin").forEach(element =>{
     element.addEventListener("click" , (event)=>{
-        deleteAdmin(1,event.target.dataset.id )
+
+
+        deleteAdmin(1,event.target.dataset.id ,event.target.dataset.role )
         
     });
 });
