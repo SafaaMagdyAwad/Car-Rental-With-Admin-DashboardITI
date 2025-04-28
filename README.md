@@ -52,6 +52,8 @@ user-name
 user-email
 }];
 store if confirmed====>confirmation from the user
+used for rental reports
+
 </p>
 <hr>
 <p>
@@ -66,12 +68,7 @@ read="false"
 </p>
 <hr>
 <p>
-used for rental reports
-rental-list=[{
-id
-car-id
-date
-}]
+
 </p>
 <hr>
 <p>
