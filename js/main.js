@@ -2,7 +2,9 @@ import { showCarList } from "./showCarsList.js";
 import { searchCar } from "./search.js";
 import { filter } from "./filter.js";
 import { showCategories } from "./showCategories.js";
-import { setLocalStorage } from "./setLocalStorage.js";
+
+
+
 
 //setLocalStorage();
 
