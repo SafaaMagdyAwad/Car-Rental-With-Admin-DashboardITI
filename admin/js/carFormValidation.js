@@ -50,6 +50,7 @@ window.addEventListener("load", () => {
                 document.getElementById(`${el.category}`).setAttribute("selected", "");
                 imagePath = el.image;
                 document.getElementById("imageHolder").setAttribute("src", `../../images/cars/${el.image}`);
+                document.getElementById("imageHolder").style.display="block";
             }
         })
     }
@@ -58,6 +59,7 @@ window.addEventListener("load", () => {
 image.addEventListener("change", () => {
     let temp = image.value.split("\\");
     imagePath = temp[temp.length - 1];
+    document.getElementById("imageHolder").style.display="block";
     document.getElementById("imageHolder").setAttribute("src", `../../images/cars/${imagePath}`);
 })
 
@@ -117,9 +119,11 @@ form.addEventListener('submit', event => {
         availabilityBool = true;
     }
 
-    if (image.value == "" && imagePath != undefined) {
+    if (image.value == "" && imagePath == undefined) {
         flag = 0;
         document.getElementById("imageError").style.display = "block";
+    } else if(image.value == ""){
+        document.getElementById("imageError").style.display = "none";
     } else {
         let temp = image.value.split("\\");
         imagePath = temp[temp.length - 1];

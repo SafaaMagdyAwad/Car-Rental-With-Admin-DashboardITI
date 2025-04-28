@@ -22,59 +22,51 @@
 
     <div class="container">
 
-        <div class="row text-center">
-            <h1>Cars Control</h1>
-        </div>
+        <div class="row text-center justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="mt-3"><b>Car Form</b></h1>
 
+                <form id="carForm" class="row g-3">
 
-        <div class="row ">
-
-
-            <form id="carForm" class="row g-3 ">
-
-                <div class="col-md-4">
-                    <label for="brandValidation" class="form-label">Brand</label>
-                    <input type="text" class="form-control" id="brandValidation">
-                    <div id="brandValidationError">
-                        Add Car Brand!
+                    <div class="col-md-6">
+                        <label for="brandValidation" class="form-label">Brand</label>
+                        <input type="text" class="form-control" id="brandValidation">
+                        <div id="brandValidationError">
+                            Add Car Brand!
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-md-4">
-                    <label for="typeValidation" class="form-label">Type</label>
-                    <input type="text" class="form-control" id="typeValidation">
-                    <div id="typeValidationError">
-                        Add Car Type!
+                    <div class="col-md-6">
+                        <label for="typeValidation" class="form-label">Type</label>
+                        <input type="text" class="form-control" id="typeValidation">
+                        <div id="typeValidationError">
+                            Add Car Type!
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="col-12">
-
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="modelValidation" class="form-label">Model year</label>
                         <input type="number" class="form-control" id="modelValidation">
                         <div id="modelValidationError">
                             Please provide a valid year between 1970 and the current year.
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-4">
-                    <label for="priceValidation" class="form-label">Price per day</label>
-                    <div class="input-group ">
-                        <input type="number" class="form-control" id="priceValidation"
-                            aria-describedby="inputGroupPrepend">
-                        <span class="input-group-text" id="inputGroupPrepend">LE/Day</span>
+                    <div class="col-md-6">
+                        <label for="priceValidation" class="form-label">Price per day</label>
+                        <div class="input-group ">
+                            <input type="number" class="form-control" id="priceValidation"
+                                aria-describedby="inputGroupPrepend">
+                            <span class="input-group-text" id="inputGroupPrepend">LE/Day</span>
 
+                        </div>
+                        <div id="priceValidationError">
+                            Please add rent price per day.
+                        </div>
                     </div>
-                    <div id="priceValidationError">
-                        Please add rent price per day.
-                    </div>
-                </div>
 
-                <div class="col-12">
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <label for="availabilityValidation" class="form-label">Availability</label>
                         <select class="form-select" id="availabilityValidation">
                             <option id="defaultAvail" selected disabled value="">Choose...</option>
@@ -85,9 +77,8 @@
                             Please select a valid state.
                         </div>
                     </div>
-                </div>
-                <div class="col-12">
-                    <div class="col-md-3">
+
+                    <div class="col-md-6">
                         <label for="categoryValidation" class="form-label">Category</label>
 
                         <select class="form-select" id="categoryValidation">
@@ -98,55 +89,21 @@
                             Please select a valid state.
                         </div>
                     </div>
-                </div>
-                <div class="col-12 row my-3">
-                    <span>Select image:</span>
-                    <!-- <div class="col-md-10 "> -->
-                        <!-- <div class="form-check mb-3 col-md-6">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="fordCar" value="frod.avif">
-                            <label class="form-check-label" for="fordCar">
-                                <img src="../images/cars/frod.avif" class="img-fluid rounded" alt=""style="object-fit: cover;">
-                            </label>
-                        </div>
-                        <div class="form-check mb-3 col-md-6">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="teslaCar" value="tesla.avif">
-                            <label class="form-check-label" for="teslaCar">
-                                <img src="../images/cars/tesla.avif" class="img-fluid rounded" alt=""style="object-fit: cover;">
-                            </label>
-                        </div>
-                        <div class="form-check mb-3 col-md-6">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="toyotaCar" value="toyota.avif">
-                            <label class="form-check-label" for="toyotaCar">
-                                <img src="../images/cars/toyota.avif" class="img-fluid rounded" alt=""style="object-fit: cover;">
-                            </label>
-                        </div>
-                        <div class="form-check mb-3 col-md-6">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="toyota2Car" value="toyota2.avif">
-                            <label class="form-check-label" for="toyota2Car">
-                                <img src="../images/cars/toyota2.avif" class="img-fluid rounded" alt=""style="object-fit: cover;">
-                            </label>
-                        </div> -->
-                        
-                        <div id="imageValidationError">
-                            <input type="file" name="" id="imageFile">
-                            <img src="" alt="" id="imageHolder" width="100px" height="100px" >
-                        </div>
-                        <div>
-                            <p id="imageError" class="text-danger" style="display: none;">Choose an image</p>
-                        </div>
-                    <!-- </div> -->
-                </div>
+                    <div class="col-12">
+                        <label class="form-label">Select Image</label>
+                        <input type="file" class="form-control" id="imageFile">
+                        <img id="imageHolder" src="" alt="Selected Car" width="100" height="100">
+                        <p id="imageError" class="text-danger" style="display: none;">Choose an image</p>
+                    </div>
 
 
-                <div class="col-12">
-                    <button class="btn btn-primary" type="submit">Submit form</button>
-                </div>
-            </form>
-
-
-
-
+                    <div class="col-12 text-center">
+                        <button class="btn btn-primary btn-lg px-5 mt-3" type="submit">Submit Form</button>
+                    </div>
+                </form>
+            </div>
         </div>
+
     </div>
 
 
