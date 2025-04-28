@@ -1,4 +1,5 @@
 import { deleteCar } from "./deleteCar.js";
+import { toggleAvailability } from "./toggleAvailability.js";
 
 export function showCarsCRUD() {
     const raw_cars = localStorage.getItem("cars");
@@ -30,6 +31,7 @@ export function showCarsCRUD() {
             <td>
                 <a href="car-form.html?id=${car.id}"><i class="bi bi-gear-fill btn text-primary"></i></a>
                 <i class="bi bi-trash-fill btn text-danger deleteCar" data-id="${car.id}"></i>
+                <i class="bi bi-toggles btn text-warning toggleCar" data-id="${car.id}"></i>
             </td>
       `;
     });
@@ -38,6 +40,12 @@ export function showCarsCRUD() {
         //console.log(element);
         element.addEventListener("click" , (event)=>{
             deleteCar(event.target.dataset.id);
+        });
+    });
+    document.querySelectorAll(".toggleCar").forEach(element =>{
+        //console.log(element);
+        element.addEventListener("click" , (event)=>{
+            toggleAvailability(event.target.dataset.id);
         });
     });
 }
