@@ -1,0 +1,30 @@
+#brandValidationError{
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+#typeValidationError{
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+#modelValidationError{
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+#priceValidationError{
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+#availabilityValidationError{
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+#categoryValidationError{
+    display: none;
+    font-size: 12px;
+    color: red;
+}

@@ -41,8 +41,8 @@ export function searchCar() {
                         <p class="card-text m-0"><b>Model:</b> ${car.model}</p>
                         <p class="card-text m-0"><b>Type:</b> ${car.type}</p>
                         <p class="card-text m-0"><b>Price:</b> ${car.price}/day</p>
-                        <p class="card-text m-0 ${car.available ? "text-success" : "text-danger"}">
-                            <b>${car.available ? "Available" : "Not available"}</b>
+                        <p class="card-text m-0 ${car.avilable ? "text-success" : "text-danger"}">
+                            <b>${car.avilable ? "Available" : "Not available"}</b>
                         </p>
                         <p class="card-text m-0 mb-2"><b>Category:</b> ${car.category}</p>
                         <div class="mt-auto">
