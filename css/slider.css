@@ -1,0 +1,154 @@
+.car-slider {
+    padding: 3.5rem 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .slider-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .slider-title {
+    text-align: center;
+    margin-bottom: 2.8rem;
+    font-size: 2.1rem;
+    font-weight: 600;
+  }
+  
+  .slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    flex-shrink: 0;
+  }
+  
+  .car-image {
+    height: 360px;
+    overflow: hidden;
+  }
+  
+  .car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+  }
+  
+  .slide:hover .car-image img {
+    transform: scale(1.02);
+  }
+  
+  .car-info {
+    padding: 1.8rem;
+    background: white;
+    text-align: center;
+    border-top: 3px solid #DDA853;
+  }
+  
+  .car-info h3 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1.4rem;
+  }
+  
+  .car-info .category {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  .slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.92);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: all 0.25s ease;
+  }
+  
+  .slider-nav:hover {
+    background: #DDA853;
+    color: white !important;
+  }
+  
+  .prev {
+    left: 1.2rem;
+  }
+  
+  .next {
+    right: 1.2rem;
+  }
+  
+  .slider-pagination {
+    position: absolute;
+    bottom: 1.8rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+  }
+  
+  .dot.active {
+    opacity: 1;
+    transform: scale(1.25);
+    background-color: #DDA853 !important;
+  }
+  
+  @media (max-width: 768px) {
+    .car-slider {
+      padding: 2.5rem 0;
+    }
+    
+    .car-image {
+      height: 280px;
+    }
+    
+    .slider-nav {
+      width: 42px;
+      height: 42px;
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .car-image {
+      height: 220px;
+    }
+    
+    .car-info {
+      padding: 1.4rem;
+    }
+    
+    .slider-pagination {
+      bottom: 1.2rem;
+    }
+  }
