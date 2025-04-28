@@ -1,6 +1,7 @@
 let bookedCars = JSON.parse(localStorage.getItem("bookedCars")) || [];
 const params = new URLSearchParams(window.location.search);
 const carId = params.get("id");
+let user = JSON.parse(sessionStorage.getItem("user"));
 let car = {};
 // console.log(carId);
 
@@ -72,7 +73,6 @@ if (Object.keys(car).length === 0) {
     cardbody.appendChild(renthistory);
     if (car.avilable) {
         // Append the modal only once when car is available
-        let user = sessionStorage.getItem("user");
         let button = document.createElement("button");
         button.className = "form-control btn btn-primary pt-2 pb-2";
         button.type = button;
@@ -122,15 +122,15 @@ if (Object.keys(car).length === 0) {
             // if user confirmed
             if (con) {
                 //storing the data
-
+console.log(user);
                 bookobject = {
                     "car-id": carId,
                     "pick-up-date": pickDate,
                     "pick-up-time": pickTime,
                     "drop-date": dropDate,
                     "drop-time": dropTime,
-                    "user-name": name,
-                    "user-email": email,
+                    "user-name": user.name,
+                    "user-email": user.email,
                     "status": "pending",
                 }
                 bookedCars.push(bookobject);
