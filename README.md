@@ -42,7 +42,7 @@ image
 </p>
 <hr>
 <p>
-booked-cars=[{
+bookedCars=[{
 car-id
 pick-up-date
 pick-up-time
@@ -50,8 +50,11 @@ drop-date
 drop-time
 user-name
 user-email
+"status": "pending",
 }];
 store if confirmed====>confirmation from the user
+used for rental reports
+
 </p>
 <hr>
 <p>
@@ -65,15 +68,19 @@ read="false"
 }]
 </p>
 <hr>
-<p>
-used for rental reports
-rental-list=[{
-id
-car-id
-date
-}]
-</p>
-<hr>
+
+in session storage 
+user===>loged in  user
+currentAdmin===>loged in admin
+
+
+users in our site
+
+user ===> can rent a car
+admin ====> can crud cars ,   view admins   , confirm,delete bookings   , add offer   ,read contact info
+suber admin ===> can do as admin   , add , delete  admin
+anonymous ====> can view cars  , see car rental history
+
 <p>
 <h2>Git Hub</h2>
 <ul>

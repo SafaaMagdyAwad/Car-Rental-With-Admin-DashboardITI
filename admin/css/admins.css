@@ -1,0 +1,16 @@
+.clickToAdd,.newAdminData {
+    padding: 5px;
+    text-align: center;
+    background-color: #f0f1f1;
+    border: solid 1px #c3c3c3;
+    color: #183b4e;
+  }
+  
+  .newAdminData {
+    padding: 50px;
+    display: none;
+  }
+
+  .adding_tabel{
+
+  }
