@@ -1,7 +1,14 @@
 let bookedCars = JSON.parse(localStorage.getItem("bookedCars")) || [];
 const params = new URLSearchParams(window.location.search);
 const carId = params.get("id");
-let user = JSON.parse(sessionStorage.getItem("user"));
+let user = JSON.parse(sessionStorage.getItem("user"))||{
+    "id": 1,
+    "name": "Ahmed Mohamed",
+    "email": "ahmed@carrental.com",
+    "password": "Ahmed@123",
+    "role": "user",
+    "createdAt": "2025-04-27T17:47:49.533Z"
+};
 let car = {};
 // console.log(carId);
 
@@ -76,7 +83,7 @@ if (Object.keys(car).length === 0) {
         let button = document.createElement("button");
         button.className = "form-control btn btn-primary pt-2 pb-2";
         button.type = button;
-        if (!user) {
+        if (Object.keys(car).length === 0) {
             //user is not logedin
             button.innerText = "login";
         } else {
@@ -107,14 +114,11 @@ if (Object.keys(car).length === 0) {
         let pickTime = document.getElementById("pickTime").value;
         let dropDate = document.getElementById("dropDate").value;
         let dropTime = document.getElementById("dropTime").value;
-        let name = document.getElementById("name").value.trim();
-        let email = document.getElementById("email").value.trim();
+
         //validation
         console.log(!pickDate);
-        if (!pickDate || !pickTime || !dropDate || !dropTime || !name || !email) {
+        if (!pickDate || !pickTime || !dropDate || !dropTime) {
             alert("Please Enter Valid Data");
-        } else if (!validateEmail(email)) {
-            alert("your Email is inValid ");
         } else {
             //asking user for confirmation
             let con = confirm("Are You Shure You Want to Book This Car?");
@@ -122,7 +126,7 @@ if (Object.keys(car).length === 0) {
             // if user confirmed
             if (con) {
                 //storing the data
-console.log(user);
+                console.log(user);
                 bookobject = {
                     "car-id": carId,
                     "pick-up-date": pickDate,
