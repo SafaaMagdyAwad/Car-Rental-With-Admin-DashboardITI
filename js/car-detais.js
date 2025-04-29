@@ -136,7 +136,7 @@ console.log(user);
                 bookedCars.push(bookobject);
                 //save in local storage
                 localStorage.setItem("bookedCars", JSON.stringify(bookedCars));
-                alert("You booked this car successfully 😊 ");
+                alert("You book Request is sent to admin now 😊 ");
             }
         }
     });
