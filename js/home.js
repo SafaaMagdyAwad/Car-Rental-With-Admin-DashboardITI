@@ -8,23 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     offers = [
       {
         id: 1,
+        carId:1,
         image: "car (6).jpg",
         title: "30% Off - SUV Rentals",
         discription:
           "Rent a premium SUV this weekend and get 30% off. Perfect for road trips and family getaways.",
       },
-      // {
-      //     "id": 2,
-      //     "image": "car (5).jpg",
-      //     "title": "35% Off - SUV Rentals",
-      //     "discription": "Get 35% off on select SUV rentals this week only!"
-      // },
-      // {
-      //     "id": 3,
-      //     "image": "car (4).jpg",
-      //     "title": "35% Off - SUV Rentals",
-      //     "discription": "Get 35% off on select SUV rentals this week only!"
-      // }
     ];
     localStorage.setItem("offers", JSON.stringify(offers));
   }
@@ -115,6 +104,7 @@ if (cars.length === 0) {
     localStorage.setItem("cars", JSON.stringify(cars));
   }
 
+let featuredCardbutton =document.querySelectorAll(".featuredCardbutton");
 let featuredCardTitles =document.querySelectorAll(".featuredCardTitle");
 let featuredCardTypeSpans=document.querySelectorAll(".featuredCardTypeSpan");
 let featuredCardPriceSpans=document.querySelectorAll(".featuredCardPriceSpan");
@@ -123,6 +113,11 @@ let featuredCardModelSpans=document.querySelectorAll(".featuredCardModelSpan");
 let featuredCardImages=document.querySelectorAll(".featuredCardImage");
 
 
+featuredCardbutton.forEach((featuredCardbutton , index)=> {
+    
+  featuredCardbutton.href= `car-details.html?id=${cars[index].id}`;
+    
+});
 featuredCardImages.forEach((featuredCardImage , index)=> {
     
     featuredCardImage.src= `images/cars/${cars[index].image}`;
@@ -186,7 +181,7 @@ featuredCardCategorySpans.forEach((featuredCardCategorySpan , index)=> {
                         <h3 class="card-title text-darkblue">${offer.title}</h3>
                         <p class="card-text text-lightblue">${offer.discription}</p>
                         <span class="badge bg-danger mb-2">Limited Time 🕗  </span><br>
-                        <a href="#" class="btn btn-primary">Book Now 📖 </a>
+                        <a href="car-details.html?id=${offer.carId}" class="btn btn-primary">Book Now 📖 </a>
                     </div>
                 </div>
             `;
@@ -213,7 +208,7 @@ featuredCardCategorySpans.forEach((featuredCardCategorySpan , index)=> {
                 <img src="images/categories/${category.image}" height="300px" width="100%"  class="card-img-top" alt="${category["category-title"]}">
                 <div class="card-body">
                     <h3 class="card-title text-lightblue">${category["category-title"]}</h3>
-                    <a href="#" class="btn btn-primary mt-4">Explore more 🌟 </a>
+                    <a href="car-list.html" class="btn btn-primary mt-4">Explore more 🌟 </a>
                 </div>
             </div>
         `;
