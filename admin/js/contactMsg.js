@@ -1,6 +1,6 @@
 let messages = [];
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     loadMessages();
     updateTables();
 });
@@ -14,8 +14,8 @@ function loadMessages() {
             return {
                 ...msg,
                 id: msg.id || index + 1,
-                read: false,
-                name: msg['user-name'] || "Unknown", 
+                name: msg['user-name'] || "Unknown",
+                read: msg.read === true || msg.read === "true" ? true : false,
             };
         });
 
@@ -59,6 +59,16 @@ function updateTables() {
     document.getElementById('no-read').style.display = readMessages.length ? 'none' : 'block';
 }
 
+function viewMessage(msg) {
+    alert(
+        `ID: ${msg.id}\n` +
+        `Name: ${msg.name}\n` +
+        `Email: ${msg.email}\n` +
+        `Subject: ${msg.subject}\n` +
+        `Message: ${msg.message}`
+    );
+}
+
 function updateTable(type, messages) {
     const tableBody = document.getElementById(`${type}-table`).querySelector('tbody');
     tableBody.innerHTML = '';
@@ -73,7 +83,10 @@ function updateTable(type, messages) {
                 <td>${msg.email || "No email"}</td>
                 <td>${msg.subject || "No subject"}</td>
                 <td class="message-content">${msg.message || "No message"}</td>
-                <td><button class="btn mark-read" onclick="markAsRead(${msg.id})">Mark as Read</button></td>
+                <td>
+                    <button class="btn view" onclick='viewMessage(${JSON.stringify(msg)})'>View</button>
+                    <button class="btn mark-read" onclick="markAsRead(${msg.id})">Mark as Read</button>
+                </td>
             `;
         } else {
             row.innerHTML = `
