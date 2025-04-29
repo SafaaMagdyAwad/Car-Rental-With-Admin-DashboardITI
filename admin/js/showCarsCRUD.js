@@ -29,6 +29,7 @@ export function showCarsCRUD() {
             <td class="${car.avilable ? "text-success" : "text-danger"}">${car.avilable}</td>
             <td>${car.category}</td>
             <td>
+                <a href="add-offer.html?id=${car.id}"><i class="bi bi-clipboard-plus"></i></a>
                 <a href="car-form.html?id=${car.id}"><i class="bi bi-gear-fill btn text-primary"></i></a>
                 <i class="bi bi-trash-fill btn text-danger deleteCar" data-id="${car.id}"></i>
                 <i class="bi bi-toggles btn text-warning toggleCar" data-id="${car.id}"></i>

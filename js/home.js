@@ -14,6 +14,30 @@ document.addEventListener("DOMContentLoaded", () => {
         discription:
           "Rent a premium SUV this weekend and get 30% off. Perfect for road trips and family getaways.",
       },
+      {
+        id: 2,
+        carId:1,
+        image: "car (6).jpg",
+        title: "30% Off - SUV Rentals",
+        discription:
+          "Rent a premium SUV this weekend and get 30% off. Perfect for road trips and family getaways.",
+      },
+      {
+        id: 3,
+        carId:1,
+        image: "car (6).jpg",
+        title: "30% Off - SUV Rentals",
+        discription:
+          "Rent a premium SUV this weekend and get 30% off. Perfect for road trips and family getaways.",
+      },
+      {
+        id: 4,
+        carId:1,
+        image: "car (6).jpg",
+        title: "30% Off - SUV Rentals",
+        discription:
+          "Rent a premium SUV this weekend and get 30% off. Perfect for road trips and family getaways.",
+      },
     ];
     localStorage.setItem("offers", JSON.stringify(offers));
   }
