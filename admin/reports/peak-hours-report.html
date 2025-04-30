@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yearly rentl Report</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const config = {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Rental Data',
+                    data: peakHours(),
+                    borderColor: 'rgb(255, 99, 132)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    fill: true // To fill the area under the line
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'My Custom Line Chart'
+                    }
+                }
+            }
+        };
+
+        const ctx = document.getElementById('myChart');
+        const myChart = new Chart(ctx, config);
+
+
+
+        function peakHours() {
+            let bookedCars = JSON.parse(localStorage.getItem("bookedCars")) || [];
+            let peakHoursbermonth = new Array(12).fill(0);
+            // console.log(bookedCars);
+            bookedCars.forEach(book => {
+                /// if book.status=confirmed
+                let createdAt = new Date();
+                // console.log(createdAt);
+                console.log(`request is created at ${createdAt.getHours()}`);
+                peakHoursbermonth[createdAt.getMonth()] = createdAt.getHours();
+                // console.log(peakHoursbermonth);
+            });
+            return peakHoursbermonth;
+        }
+
+
+
+        // console.log(carsbermonth);
+
+    </script>
+</body>
+
+</html>
