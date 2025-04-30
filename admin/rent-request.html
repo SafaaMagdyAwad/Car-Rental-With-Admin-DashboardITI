@@ -18,21 +18,22 @@
         }
     </style>
 
+    <script src="js/adminMiddleware.js"></script>
 </head>
 
 <body>
     <!-- start of nav -->
     <div class="container-fluid">
-        
+
         <div class="row " id="row_parent">
-          <!-- offcanvas -->
-    
-            
+            <!-- offcanvas -->
+
+
             <div class="offcanvas show col-md-2 col-sm-1 " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
                 id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i
-                            class="bi bi-car-front-fill"></i>RentCar</h5>
+                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i class="bi bi-car-front-fill"></i>RentCar
+                    </h5>
                     <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
                 </div>
                 <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
@@ -44,7 +45,7 @@
                             <a class="nav-link " href="./admins.html">Admins</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#">Booking</a>
+                            <a class="nav-link active" href="#">Booking</a>
                         </li>
                         <li class="nav-item mx-2">
                             <a class="nav-link" href="./contactMessages.html">Contact Messages</a>
@@ -53,7 +54,7 @@
                             <a class="nav-link " href="./offers.html">offers</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link active" href="./rental-reports.html">Rental reports</a>
+                            <a class="nav-link" href="./rental-reports.html">Rental reports</a>
                         </li>
 
                     </ul>
@@ -62,27 +63,27 @@
             <div class="col-md-9 col-sm-11 container">
                 <div class="container">
                     <div class="row text-center justify-content-center">
-                        <div class="col-lg-10">
+                        <div class="col-lg-12">
                             <h1 class="my-3"><b>Rent Requests</b></h1>
                             <div class="row shadow rounded" id="requestsHolder">
                                 <!-- content will be added here! -->
-            
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- end of nav bar -->
+        <!-- end of nav bar -->
 
-    
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-    crossorigin="anonymous"></script>
-    <script src="js/navbar_admin.js"></script>
-    
-    <script type="module" src="js/rent-main.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+            crossorigin="anonymous"></script>
+        <script src="js/navbar_admin.js"></script>
+
+        <script type="module" src="js/rent-main.js"></script>
 </body>
 
 </html>
