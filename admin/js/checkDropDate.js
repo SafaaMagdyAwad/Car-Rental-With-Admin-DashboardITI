@@ -42,7 +42,9 @@ export function checkDropDate(bookedCars , cars){
     for (let index = 0; index < sortedBooked.length; index++) {
 
         let temp = sortedBooked[index]['drop-date'] +":" + sortedBooked[index]['drop-time'];
+        let tempPick = sortedBooked[index]['pick-up-date'] +":" + sortedBooked[index]['pick-up-time'];
         let dropDate = new Date(temp);
+        let pickDate = new Date(tempPick);
         //console.log(dropDate);
         if (currentdate > dropDate && sortedBooked[index].status == "confirmed") {
             //return availability to true
@@ -51,7 +53,14 @@ export function checkDropDate(bookedCars , cars){
                     car.avilable = true;
                 }
             })
-        }else if (currentdate < dropDate && sortedBooked[index].status == "confirmed") {
+        }else if (currentdate < pickDate && sortedBooked[index].status == "confirmed") {
+            //return availability to true
+            cars.forEach(car=>{
+                if(car.id == sortedBooked[index]['car-id']){
+                    car.avilable = true;
+                }
+            })
+        }else if (currentdate > pickDate && currentdate < dropDate && sortedBooked[index].status == "confirmed") {
             //return availability to true
             cars.forEach(car=>{
                 if(car.id == sortedBooked[index]['car-id']){
