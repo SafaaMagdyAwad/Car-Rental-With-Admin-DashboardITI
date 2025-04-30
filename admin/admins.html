@@ -17,39 +17,51 @@
 <body>
     <div class="container-fluid">
         <div class="row " id="row_parent">
-            <!-- offcanvas -->
-            <div class="col-md-2 col-sm-1 " id="offcanvas_div">
-                <button class="btn  d-none" type="button" id="toggleButton" data-bs-toggle="offcanvas"
+             <!-- offcanvas -->
+             <!-- <div class="col-md-2 col-sm-1 " id="offcanvas_div"> -->
+                <!-- <button class="btn  d-none" type="button" id="toggleButton" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
-                        class="bi bi-toggles2"></i></button>
-                <div class="offcanvas show" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                        class="bi bi-toggles2"></i></button> -->
+                <div class="offcanvas show col-md-2 col-sm-1 " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
                     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i class="bi bi-car-front-fill"></i>RentCar</h5>
+                        <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i
+                                class="bi bi-car-front-fill"></i>RentCar</h5>
                         <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
                     </div>
                     <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
                         <ul class="navbar-nav justify-content-around align-items-center fs-5 flex-grow-1 pe-3">
                             <li class="nav-item mx-2">
-                                <a class="nav-link " aria-current="page" href="#">Cars</a>
+                                <a class="nav-link " aria-current="page" href="index.html">Dashboard</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link active" href="#">Admins</a>
+                                <a class="nav-link " aria-current="page" href="cars-crud.html">Cars</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link" href="#">Booking</a>
+                                <a class="nav-link active" href="./admins.html">Admins</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <a class="nav-link" href="#">Contact Messages</a>
+                                <a class="nav-link" href="./rent-request.html">Booking</a>
                             </li>
-                          
+                            <li class="nav-item mx-2">
+                                <a class="nav-link" href="./contactMessages.html">Contact Messages</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link " href="./offers.html">offers</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link " href="./rental-reports.html">Rental reports</a>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
-            </div>
-            <!-- tabel of admins -->
-            <div class="col-md-9 col-sm-11">
-                <table class="table table-bordered  table-striped table-hover ">
+            <!-- </div> -->
+
+            <!-- dashboard content -->
+             <div class="col-md-9 col-sm-11 container">
+
+                <table class="table table-bordered  table-striped table-hover mt-5 ">
                     <thead>
                         <tr>
                             <th scope="col">Id </th>

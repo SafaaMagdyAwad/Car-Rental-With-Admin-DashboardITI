@@ -35,51 +35,63 @@ if (Object.keys(car).length !== 0) {
 
     let rentalheading = document.getElementById("rentalheading");
     let renthistory = document.getElementById("renthistory");
-    let BookedCars = JSON.parse(localStorage.getItem("bookedCars"));
+    let BookedCars = JSON.parse(localStorage.getItem("bookedCars"))||[];
     let hasRental = false;
     console.log(BookedCars);
-    BookedCars.forEach(book => {
-        if (book["car-id"] == carId && book["status"] == "confirmed") {
-            hasRental = true;
-            rentalheading.innerHTML = `
-                        <tr>
-                            <td>
-                                rented by
-                            </td>
-                            <td>
-                                from
-                            </td>
-                            <td>
-                                to
-                            </td>
-                        </tr>
-            `;
-            //show rental history  append elements
-            let row = document.createElement("tr");
-            let rentedbycol = document.createElement("td");
-            rentedbycol.innerText = book["user-name"]
-            let fromcol = document.createElement("td");
-            fromcol.innerText = `${book["pick-up-date"]}  ,${book["pick-up-time"]}`;
-            let tocol = document.createElement("td");
-            tocol.innerText = `${book["drop-date"]}  ,${book["drop-time"]}`;
-            row.appendChild(rentedbycol);
-            row.appendChild(fromcol);
-            row.appendChild(tocol);
-            renthistory.appendChild(row);
-        }
-
-    });
-    if (!hasRental) {
+    if(BookedCars.length==0){
         rentalheading.innerHTML = `
-            <div class="card text-bg-warning mb-3" style="max-width: 100vw;">
-                <div class="card-header"> No requests </div>
-                <div class="card-body">
-                    <p class="card-text">this car has no rental requests yet</p>
-                </div>
-            </div>`;
+        <div class="card text-bg-warning mb-3" style="max-width: 100vw;">
+            <div class="card-header"> No requests </div>
+            <div class="card-body">
+                <p class="card-text">this car has no rental requests yet</p>
+            </div>
+        </div>`;
+    }else{
+
+        BookedCars.forEach(book => {
+            if (book["car-id"] == carId && book["status"] == "confirmed") {
+                hasRental = true;
+                rentalheading.innerHTML = `
+                            <tr>
+                                <td>
+                                    rented by
+                                </td>
+                                <td>
+                                    from
+                                </td>
+                                <td>
+                                    to
+                                </td>
+                            </tr>
+                `;
+                //show rental history  append elements
+                let row = document.createElement("tr");
+                let rentedbycol = document.createElement("td");
+                rentedbycol.innerText = book["user-name"]
+                let fromcol = document.createElement("td");
+                fromcol.innerText = `${book["pick-up-date"]}  ,${book["pick-up-time"]}`;
+                let tocol = document.createElement("td");
+                tocol.innerText = `${book["drop-date"]}  ,${book["drop-time"]}`;
+                row.appendChild(rentedbycol);
+                row.appendChild(fromcol);
+                row.appendChild(tocol);
+                renthistory.appendChild(row);
+            }
+    
+        });
+        if (!hasRental) {
+            rentalheading.innerHTML = `
+                <div class="card text-bg-warning mb-3" style="max-width: 100vw;">
+                    <div class="card-header"> No requests </div>
+                    <div class="card-body">
+                        <p class="card-text">this car has no rental requests yet</p>
+                    </div>
+                </div>`;
+        }
     }
 } else {
 
+    
     page.innerHTML = `
         <div class="card text-bg-warning mb-3" style="max-width: 100vw;">
             <div class="card-header">some thig went wrong</div>
