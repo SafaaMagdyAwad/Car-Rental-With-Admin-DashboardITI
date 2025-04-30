@@ -39,7 +39,7 @@
 export function showRentRequests(bookedCars, cars) {
     //let test = document.getElementById("test");
     let parent = document.getElementById("requestsHolder");
-
+    debugger;
     //handling if no requests 
     if (bookedCars == undefined || bookedCars.length == 0) {
         parent.innerHTML = `<h1 class="text-danger"><b>No Rent Requests</b><h1>`;

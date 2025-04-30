@@ -152,7 +152,7 @@ if (Object.keys(car).length === 0) {
                     bookedCars.push(bookobject);
                     //save in local storage
                     localStorage.setItem("bookedCars", JSON.stringify(bookedCars));
-                    alert("You book Request is sent to admin now 😊 ");
+                    alert("You book Request is sent to admin now 😊");
                 }
             }
         }
