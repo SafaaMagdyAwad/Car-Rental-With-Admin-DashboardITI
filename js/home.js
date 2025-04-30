@@ -2,13 +2,35 @@ document.addEventListener("DOMContentLoaded", () => {
   let offers = JSON.parse(localStorage.getItem("offers")) || [];
   let categories = JSON.parse(localStorage.getItem("categories")) || [];
   let cars = JSON.parse(localStorage.getItem("cars")) || [];
-  
+  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+  if (reviews.length === 0) {
+    reviews = [
+      {
+        "id": 1,//auto increment   can do that by using reviews.length
+        "stars": 5,// number between 1,5
+        "is-hidden": true,// all reviews are hidden and the admin changes the status 
+        "created-at": new Date().toDateString(),
+        "comment": "this site is a good one",
+        "user-name": "Magdy Awad",//user name will get it from session storage 
+      }, {
+        "id": 2,//auto increment   can do that by using reviews.length
+        "stars": 4,// number between 1,5
+        "is-hidden": true,// all reviews are hidden and the admin changes the status 
+        "created-at": new Date().toDateString(),
+        "comment": "this site is a good one",
+        "user-name": "Mohammad Magdy",//user name will get it from session storage 
+      }
+
+    ];
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+  }
 
   if (offers.length === 0) {
     offers = [
       {
         id: 1,
-        carId:1,
+        carId: 1,
         image: "car (6).jpg",
         title: "30% Off - SUV Rentals",
         discription:
@@ -56,8 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   console.log(categories)
 
-//   feature section
-if (cars.length === 0) {
+  //   feature section
+  if (cars.length === 0) {
     cars = [
       {
         id: 1,
@@ -105,107 +127,107 @@ if (cars.length === 0) {
 
     localStorage.setItem("cars", JSON.stringify(cars));
   }
-// Check if admins array exists in localStorage
-if (!localStorage.getItem("admins")) {
-  const admins = [
-    {
-      id: 1,
-      name: "Ahmed Mohamed",
-      email: "ahmed@carrental.com",
-      password: "Ahmed@123",
-      role: "Superadmin",
-      createdAt: new Date().toISOString(),
-    },
-    {
-      id: 2,
-      name: "Mariam Khalid",
-      email: "mariam@carrental.com",
-      password: "Mariam@123",
-      role: "admin",
-      createdAt: new Date().toISOString(),
-    },
-    {
-      id: 3,
-      name: "Ali Hassan",
-      email: "ali@carrental.com",
-      password: "Ali@12345",
-      role: "admin",
-      createdAt: new Date().toISOString(),
-    },
-    {
-      id: 4,
-      name: "Sara Abdullah",
-      email: "sara@carrental.com",
-      password: "Sara@123",
-      role: "admin",
-      createdAt: new Date().toISOString(),
-    },
-    {
-      id: 5,
-      name: "Khaled Ibrahim",
-      email: "khaled@carrental.com",
-      password: "Khaled@123",
-      role: "admin",
-      createdAt: new Date().toISOString(),
-    },
-    {
-      id: 6,
-      name: "Nora Saad",
-      email: "nora@carrental.com",
-      password: "Nora@1234",
-      role: "admin",
-      createdAt: new Date().toISOString(),
-    },
-  ];
+  // Check if admins array exists in localStorage
+  if (!localStorage.getItem("admins")) {
+    const admins = [
+      {
+        id: 1,
+        name: "Ahmed Mohamed",
+        email: "ahmed@carrental.com",
+        password: "Ahmed@123",
+        role: "Superadmin",
+        createdAt: new Date().toISOString(),
+      },
+      {
+        id: 2,
+        name: "Mariam Khalid",
+        email: "mariam@carrental.com",
+        password: "Mariam@123",
+        role: "admin",
+        createdAt: new Date().toISOString(),
+      },
+      {
+        id: 3,
+        name: "Ali Hassan",
+        email: "ali@carrental.com",
+        password: "Ali@12345",
+        role: "admin",
+        createdAt: new Date().toISOString(),
+      },
+      {
+        id: 4,
+        name: "Sara Abdullah",
+        email: "sara@carrental.com",
+        password: "Sara@123",
+        role: "admin",
+        createdAt: new Date().toISOString(),
+      },
+      {
+        id: 5,
+        name: "Khaled Ibrahim",
+        email: "khaled@carrental.com",
+        password: "Khaled@123",
+        role: "admin",
+        createdAt: new Date().toISOString(),
+      },
+      {
+        id: 6,
+        name: "Nora Saad",
+        email: "nora@carrental.com",
+        password: "Nora@1234",
+        role: "admin",
+        createdAt: new Date().toISOString(),
+      },
+    ];
 
-  localStorage.setItem("admins", JSON.stringify(admins));
-}
+    localStorage.setItem("admins", JSON.stringify(admins));
+  }
 
-let featuredCardbutton =document.querySelectorAll(".featuredCardbutton");
-let featuredCardTitles =document.querySelectorAll(".featuredCardTitle");
-let featuredCardTypeSpans=document.querySelectorAll(".featuredCardTypeSpan");
-let featuredCardPriceSpans=document.querySelectorAll(".featuredCardPriceSpan");
-let featuredCardCategorySpans=document.querySelectorAll(".featuredCardCategorySpan");
-let featuredCardModelSpans=document.querySelectorAll(".featuredCardModelSpan");
-let featuredCardImages=document.querySelectorAll(".featuredCardImage");
+  let featuredCardbutton = document.querySelectorAll(".featuredCardbutton");
+  let featuredCardTitles = document.querySelectorAll(".featuredCardTitle");
+  let featuredCardTypeSpans = document.querySelectorAll(".featuredCardTypeSpan");
+  let featuredCardPriceSpans = document.querySelectorAll(".featuredCardPriceSpan");
+  let featuredCardCategorySpans = document.querySelectorAll(".featuredCardCategorySpan");
+  let featuredCardModelSpans = document.querySelectorAll(".featuredCardModelSpan");
+  let featuredCardImages = document.querySelectorAll(".featuredCardImage");
 
 
-featuredCardbutton.forEach((featuredCardbutton , index)=> {
-    
-  featuredCardbutton.href= `car-details.html?id=${cars[index].id}`;
-    
-});
-featuredCardImages.forEach((featuredCardImage , index)=> {
-    
-    featuredCardImage.src= `images/cars/${cars[index].image}`;
-    
-});
-featuredCardTitles.forEach((featuredCardTitle , index)=> {
-    
-    featuredCardTitle.innerHTML=cars[index].prand;
-    
-});
-featuredCardPriceSpans.forEach((featuredCardPriceSpan , index)=> {
-    
-    featuredCardPriceSpan.innerHTML=cars[index].price;
-    
-});
+  featuredCardbutton.forEach((featuredCardbutton, index) => {
 
-featuredCardModelSpans.forEach((featuredCardModelSpan , index)=> {
-    
-    featuredCardModelSpan.innerHTML=cars[index].model;
-    
-});
-featuredCardTypeSpans.forEach((featuredCardTypeSpan , index)=> {
-    
-    featuredCardTypeSpan.innerHTML=cars[index].type;
-    
-});
-featuredCardCategorySpans.forEach((featuredCardCategorySpan , index)=> {
-    
-    featuredCardCategorySpan.innerHTML=cars[index].category;
-    
-});
+    featuredCardbutton.href = `car-details.html?id=${cars[index].id}`;
+
+  });
+  featuredCardImages.forEach((featuredCardImage, index) => {
+
+    featuredCardImage.src = `images/cars/${cars[index].image}`;
+
+  });
+  featuredCardTitles.forEach((featuredCardTitle, index) => {
+
+    featuredCardTitle.innerHTML = cars[index].prand;
+
+  });
+  featuredCardPriceSpans.forEach((featuredCardPriceSpan, index) => {
+
+    featuredCardPriceSpan.innerHTML = cars[index].price;
+
+  });
+
+  featuredCardModelSpans.forEach((featuredCardModelSpan, index) => {
+
+    featuredCardModelSpan.innerHTML = cars[index].model;
+
+  });
+  featuredCardTypeSpans.forEach((featuredCardTypeSpan, index) => {
+
+    featuredCardTypeSpan.innerHTML = cars[index].type;
+
+  });
+  featuredCardCategorySpans.forEach((featuredCardCategorySpan, index) => {
+
+    featuredCardCategorySpan.innerHTML = cars[index].category;
+
+  });
 
 
 
@@ -222,7 +244,7 @@ featuredCardCategorySpans.forEach((featuredCardCategorySpan , index)=> {
     if (offers.length == 1) {
       col.className = `col-lg-12 col-md-12 col-sm-12`;
     } else if (offers.length == 2) {
-        col.className = `col-lg-6 col-md-5 col-sm-12`;
+      col.className = `col-lg-6 col-md-5 col-sm-12`;
     } else {
       col.className = `col-lg-4 col-md-6 col-sm-12`;
     }
