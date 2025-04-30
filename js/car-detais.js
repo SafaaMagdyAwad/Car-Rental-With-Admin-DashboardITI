@@ -118,9 +118,12 @@ if (Object.keys(car).length === 0) {
         } else {
             // console.log(pickDate> dropDate);
             // if the drop date is less than pickup date show error message
-
+            debugger;
+            let currentdate = new Date().toLocaleDateString();
             if(pickDate > dropDate){
                 alert("the Drop date must be after the pic date");
+            }else if(pickDate < currentdate){
+                alert("the pick date must be valid");
             }else{
                 //asking user for confirmation
                 let con = confirm("Are You Sure You Want to Book This Car?");
