@@ -116,29 +116,36 @@ if (Object.keys(car).length === 0) {
         if (!pickDate || !pickTime || !dropDate || !dropTime) {
             alert("Please Enter Valid Data");
         } else {
-            //asking user for confirmation
-            let con = confirm("Are You Shure You Want to Book This Car?");
-            let temp = carId + "_" + Math.random();
-            // if user confirmed
-            if (con) {
-                //storing the data
-                console.log(user);
-                bookobject = {
-                    "rent-id": temp,
-                    "car-id": carId,
-                    "pick-up-date": pickDate,
-                    "pick-up-time": pickTime,
-                    "drop-date": dropDate,
-                    "drop-time": dropTime,
-                    "user-name": user.name,
-                    "user-email": user.email,
-                    "status": "pending",
-                    "created-at":new Date(),
+            // console.log(pickDate> dropDate);
+            // if the drop date is less than pickup date show error message
+
+            if(pickDate > dropDate){
+                alert("the Drop date must be after the pic date");
+            }else{
+                //asking user for confirmation
+                let con = confirm("Are You Shure You Want to Book This Car?");
+                let temp = carId + "_" + Math.random();
+                // if user confirmed
+                if (con) {
+                    //storing the data
+                    // console.log(user);
+                    bookobject = {
+                        "rent-id": temp,
+                        "car-id": carId,
+                        "pick-up-date": pickDate,
+                        "pick-up-time": pickTime,
+                        "drop-date": dropDate,
+                        "drop-time": dropTime,
+                        "user-name": user.name,
+                        "user-email": user.email,
+                        "status": "pending",
+                        "created-at":new Date(),
+                    }
+                    bookedCars.push(bookobject);
+                    //save in local storage
+                    localStorage.setItem("bookedCars", JSON.stringify(bookedCars));
+                    alert("You book Request is sent to admin now 😊 ");
                 }
-                bookedCars.push(bookobject);
-                //save in local storage
-                localStorage.setItem("bookedCars", JSON.stringify(bookedCars));
-                alert("You book Request is sent to admin now 😊 ");
             }
         }
     });
