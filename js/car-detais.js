@@ -122,12 +122,13 @@ if (Object.keys(car).length === 0) {
         } else {
             //asking user for confirmation
             let con = confirm("Are You Shure You Want to Book This Car?");
-
+            let temp = carId + "_" + Math.random();
             // if user confirmed
             if (con) {
                 //storing the data
                 console.log(user);
                 bookobject = {
+                    "rent-id": temp,
                     "car-id": carId,
                     "pick-up-date": pickDate,
                     "pick-up-time": pickTime,
