@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Check for remembered login
     const rememberMe = localStorage.getItem('rememberAdmin');
     if (rememberMe) {
         const adminData = JSON.parse(rememberMe);
@@ -8,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('rememberMe').checked = true;
     }
 
-    // Check for registration data
     const userData = sessionStorage.getItem('user');
     if (userData) {
         const user = JSON.parse(userData);
@@ -16,11 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
         sessionStorage.removeItem('user');
     }
 
-    // Form elements
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     
-    // Event listeners
     emailInput.addEventListener('input', validateEmail);
     passwordInput.addEventListener('input', validatePassword);
     
@@ -34,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             authenticateUser(email, password, rememberMe);
         } else {
-            // Shake animation for invalid form
             const loginContainer = document.querySelector('.login-container');
             loginContainer.classList.add('shake-animation');
             setTimeout(() => loginContainer.classList.remove('shake-animation'), 500);
@@ -66,7 +61,6 @@ function authenticateUser(email, password, rememberMe) {
     const admins = JSON.parse(localStorage.getItem('admins')) || [];
     const users = JSON.parse(localStorage.getItem('users')) || [];
     
-    // Check admin first
     const admin = admins.find(a => a.email === email && a.password === password);
     if (admin) {
         handleLoginSuccess(admin, rememberMe, 'admin');
@@ -80,14 +74,12 @@ function authenticateUser(email, password, rememberMe) {
         return;
     }
     
-    // If no match found
     alert('Invalid credentials. Please try again.');
     document.querySelector('.login-container').classList.add('shake-animation');
     setTimeout(() => document.querySelector('.login-container').classList.remove('shake-animation'), 500);
 }
 
 function handleLoginSuccess(user, rememberMe, userType) {
-    // Store session
     sessionStorage.setItem('currentUser', JSON.stringify(user));
     
     // Remember me functionality
@@ -100,7 +92,6 @@ function handleLoginSuccess(user, rememberMe, userType) {
         localStorage.removeItem('rememberAdmin');
     }
     
-    // Redirect based on role
     const redirectPage = userType === 'admin' ? '/admin/admins.html' : 'index.html';
     alert(`Welcome ${user.username || user.email}! Redirecting...`);
     window.location.href = redirectPage;
