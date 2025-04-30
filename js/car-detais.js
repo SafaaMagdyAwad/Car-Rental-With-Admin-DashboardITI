@@ -1,14 +1,7 @@
 let bookedCars = JSON.parse(localStorage.getItem("bookedCars")) || [];
 const params = new URLSearchParams(window.location.search);
 const carId = params.get("id");
-let user = JSON.parse(sessionStorage.getItem("user"))||{
-    "id": 1,
-    "name": "Ahmed Mohamed",
-    "email": "ahmed@carrental.com",
-    "password": "Ahmed@123",
-    "role": "user",
-    "createdAt": "2025-04-27T17:47:49.533Z"
-};
+let user = JSON.parse(sessionStorage.getItem("currentUser"))||{};
 let car = {};
 // console.log(carId);
 
@@ -76,16 +69,19 @@ if (Object.keys(car).length === 0) {
     let renthistory = document.createElement("a");
     renthistory.className = "form-control btn btn-success mb-4 mt-4 pt-2 pb-2";
     renthistory.innerText = "Show Car Rental History";
-    renthistory.href = "rentalhistory.html";
+    renthistory.href = `rentalhistory.html?id=${car["id"]}`;
     cardbody.appendChild(renthistory);
     if (car.avilable) {
         // Append the modal only once when car is available
         let button = document.createElement("button");
         button.className = "form-control btn btn-primary pt-2 pb-2";
         button.type = button;
-        if (Object.keys(car).length === 0) {
+        if (Object.keys(user).length === 0) {
             //user is not logedin
             button.innerText = "login";
+            button.addEventListener("click",()=>{
+                window.open("login.html","_self");
+            })
         } else {
             button.setAttribute("data-bs-toggle", "modal");
             button.setAttribute("data-bs-target", "#exampleModal");
