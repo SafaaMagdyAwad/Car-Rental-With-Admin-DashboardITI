@@ -123,7 +123,7 @@ if (Object.keys(car).length === 0) {
                 alert("the Drop date must be after the pic date");
             }else{
                 //asking user for confirmation
-                let con = confirm("Are You Shure You Want to Book This Car?");
+                let con = confirm("Are You Sure You Want to Book This Car?");
                 let temp = carId + "_" + Math.random();
                 // if user confirmed
                 if (con) {
