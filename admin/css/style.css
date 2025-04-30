@@ -1,0 +1,46 @@
+colors {
+  --light-color: #f5eedc;
+  --primary-color: #27548a;
+  --dark-color: #183b4e;
+  --accent-color: #dda853;
+}
+
+.dashboard_header {
+  padding-block: 1em;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2em;
+}
+
+.dashboard_header h1 {
+  color: #27548a;
+}
+
+.dashborad_dynamic_data {
+  border: 1px solid #27548a;
+  height: 3.5em;
+  width: 11em;
+  text-align: center;
+}
+
+.dashborad_dynamic_data h6 {
+  color: #27548a;
+}
+
+.dashborad_dynamic_data p {
+  color: rgb(253, 134, 154) ;
+
+}
+
+.dashboard_dynamic_data_icon {
+  margin-right: 0.25em;
+}
+
+
+/* chartOfCars */
+
+.chartOfCars{
+ margin-block: 4em;
+}
+.chartOfCars h2{
+    color: #27548a;
+}

@@ -23,7 +23,7 @@ export function showCarList() {
                 </p>
                 <p class="card-text m-0 mb-2"><b>Category:</b> ${car.category}</p>
                 <div class="mt-auto">
-                    <a href="car-details.html?id=${car.id}" class="btn btn-primary text-white bg-blue w-100">Car Details</a>
+                    <a href="car-details.html?id=${car.id}&prand=${car.prand}" class="btn btn-primary text-white bg-blue w-100">Car Details</a>
                 </div>
             </div>
         </div>`;

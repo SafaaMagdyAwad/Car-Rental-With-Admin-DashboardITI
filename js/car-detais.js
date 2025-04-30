@@ -1,5 +1,6 @@
 let bookedCars = JSON.parse(localStorage.getItem("bookedCars")) || [];
 const params = new URLSearchParams(window.location.search);
+const carPrand = params.get("prand");
 const carId = params.get("id");
 let user = JSON.parse(sessionStorage.getItem("user"))||{
     "id": 1,
@@ -136,6 +137,7 @@ if (Object.keys(car).length === 0) {
                     "user-name": user.name,
                     "user-email": user.email,
                     "status": "pending",
+                    "prand": carPrand,
                 }
                 bookedCars.push(bookobject);
                 //save in local storage

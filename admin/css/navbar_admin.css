@@ -5,24 +5,29 @@ color: #183b4e;
 color: #dda853;
 }
 
-
+body{
+    height: 100%;
+}
 .offcanvas{
-    position: static !important; 
-    background-color: #183b4e;
-    height: 100vh;
-    color: #f5eedc;
+    /* position: static !important;  */
+    background-color: #f3f3f3;
+    height: -webkit-fill-available;
 }
 #offcanvas_div{
-    background-color: #183b4e;
-    height: 100vh;
+    background-color: #f3f3f3;
+    box-shadow: 1px 1px 3px #DDD;
 
 }
+.offcanvas-title,.nav-link{
+ color: #27548a;
+}
 .bi.bi-car-front-fill{
-    color: #dda853;
+    /* color: rgb(253, 134, 154) ; */
     font-size: 1.5em;
+    margin-right: 0.25em;
 }
 .nav-link:hover,
   .nav-link.active,
   .navbar-brand:hover {
-    color: #dda853 !important;
+    color: rgb(253, 134, 154)  !important;
   }
