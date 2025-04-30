@@ -1,8 +1,4 @@
-// Initialize admin data in localStorage if not exists
 document.addEventListener('DOMContentLoaded', function () {
-
-
-    // Check if remember me was checked
     const rememberMe = localStorage.getItem('rememberAdmin');
     if (rememberMe) {
         const adminData = JSON.parse(rememberMe);
@@ -11,8 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('rememberMe').checked = true;
     }
 
-    // Form validation
-    const emailInput = document.getElementById('email');    
+    const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const emailError = document.getElementById('emailError');
     const passwordError = document.getElementById('passwordError');
@@ -33,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             authenticateAdmin(email, password, rememberMe);
         } else {
-            // Show shake animation on form
             const loginContainer = document.querySelector('.login-container');
             loginContainer.classList.add('shake-animation');
             setTimeout(() => {
@@ -41,6 +35,48 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 500);
         }
     });
+
+    const regForm = document.getElementById('registrationForm');
+    if (regForm) {
+        regForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+
+            const user = {
+                username,
+                email,
+                password, 
+                role,
+                createdAt: new Date().toISOString()
+            };
+
+            sessionStorage.setItem('user', JSON.stringify(user));
+            
+            // Store in localStorage for persistence (existing users array)
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            // Redirect to login page
+            window.location.href = 'login.html';
+        });
+    }
+
+    if (window.location.pathname.includes('login.html')) {
+        const userData = sessionStorage.getItem('user');
+        if (userData) {
+            const user = JSON.parse(userData);
+            if (user.email && document.getElementById('email')) {
+                document.getElementById('email').value = user.email;
+            }
+            window.user = user;
+            
+          
+        }
+    }
 });
 
 function validateEmail() {
@@ -71,33 +107,50 @@ function validatePassword() {
 }
 
 function authenticateAdmin(email, password, rememberMe) {
-    const admins = JSON.parse(localStorage.getItem('admins'));
+    // Check both admins and regular users
+    const admins = JSON.parse(localStorage.getItem('admins')) || [];
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    // First check admins
     const admin = admins.find(admin => admin.email === email && admin.password === password);
-
     if (admin) {
-        // Store current session
-        sessionStorage.setItem('currentAdmin', JSON.stringify(admin));
-
-        // Store in localStorage if remember me is checked
-        if (rememberMe) {
-            localStorage.setItem('rememberAdmin', JSON.stringify({ email, password }));
-        } else {
-            localStorage.removeItem('rememberAdmin');
-        }
-
-        // Show success message
-        alert(`Welcome ${admin.name}! Redirecting to dashboard...`);
-
-        // Redirect to dashboard
-        window.location.href = 'index.html';
-    } else {
-        // Show error message with animation
-        const loginContainer = document.querySelector('.login-container');
-        loginContainer.classList.add('shake-animation');
-        setTimeout(() => {
-            loginContainer.classList.remove('shake-animation');
-        }, 500);
-
-        alert('Invalid credentials. Please try again.');
+        handleSuccessfulLogin(admin, rememberMe, 'admin');
+        return;
     }
+    
+    // Then check regular users
+    const user = users.find(user => user.email === email && user.password === password);
+    if (user) {
+        handleSuccessfulLogin(user, rememberMe, 'user');
+        return;
+    }
+
+    const loginContainer = document.querySelector('.login-container');
+    loginContainer.classList.add('shake-animation');
+    setTimeout(() => {
+        loginContainer.classList.remove('shake-animation');
+    }, 500);
+
+    alert('Invalid credentials. Please try again.');
+}
+
+function handleSuccessfulLogin(user, rememberMe, userType) {
+    sessionStorage.setItem('currentUser', JSON.stringify(user));
+    
+    if (rememberMe) {
+        localStorage.setItem('rememberAdmin', JSON.stringify({ 
+            email: user.email, 
+            password: user.password 
+        }));
+    } else {
+        localStorage.removeItem('rememberAdmin');
+    }
+
+    // Show success message
+    const welcomeName = user.name || user.username || 'User';
+    alert(`Welcome ${welcomeName}! Redirecting to dashboard...`);
+
+    // Redirect to appropriate dashboard based on user type
+    const redirectPage = userType === 'admin' ? 'admin-dashboard.html' : 'user-dashboard.html';
+    window.location.href = redirectPage;
 }
