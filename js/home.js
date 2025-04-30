@@ -189,11 +189,7 @@ featuredCardCategorySpans.forEach((featuredCardCategorySpan , index)=> {
     if (offers.length == 1) {
       col.className = `col-lg-12 col-md-12 col-sm-12`;
     } else if (offers.length == 2) {
-      if (offer.id == 1) {
-        col.className = `col-lg-4 col-md-5 col-sm-12`;
-      } else {
-        col.className = `col-lg-8 col-md-7 col-sm-12`;
-      }
+        col.className = `col-lg-6 col-md-5 col-sm-12`;
     } else {
       col.className = `col-lg-4 col-md-6 col-sm-12`;
     }

@@ -72,7 +72,7 @@ if (Object.keys(car).length !== 0) {
     if (!hasRental) {
         rentalheading.innerHTML = `
             <div class="card text-bg-warning mb-3" style="max-width: 100vw;">
-                <div class="card-header"> sorry 😢 </div>
+                <div class="card-header"> No requests </div>
                 <div class="card-body">
                     <p class="card-text">this car has no rental requests yet</p>
                 </div>
@@ -82,7 +82,7 @@ if (Object.keys(car).length !== 0) {
 
     page.innerHTML = `
         <div class="card text-bg-warning mb-3" style="max-width: 100vw;">
-            <div class="card-header">sorry 😢</div>
+            <div class="card-header">some thig went wrong</div>
             <div class="card-body">
                 <p class="card-text">This car is not stored into the system</p>
             </div>

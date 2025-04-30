@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const roleSelect = document.getElementById('role');
     const roleDescription = document.getElementById('role-description-text');
     const loginBtn = document.getElementById('login-btn');
-    const alreadyHaveAccountBtn = document.getElementById('already-have-account'); // Add this button in your HTML
-    
+    const alreadyHaveAccountBtn = document.getElementById('login-btn'); 
+
     const usernameError = document.getElementById('username-error');
     const emailError = document.getElementById('email-error');
     const passwordError = document.getElementById('password-error');
@@ -31,89 +31,60 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Login button click handler
     loginBtn.addEventListener('click', function() {
-        // Store form data in sessionStorage
         const userData = {
             username: usernameInput.value,
             email: emailInput.value,
             role: roleSelect.value
         };
         
-        // Save to sessionStorage
         sessionStorage.setItem('user', JSON.stringify(userData));
-        
-        // Redirect to login page
-        window.location.href = 'login.html';
-    });
-    
-    // "Already have an account" button click handler - NEW
-    alreadyHaveAccountBtn.addEventListener('click', function() {
-        // Store current form data in sessionStorage
-        const currentFormData = {
-            username: usernameInput.value,
-            email: emailInput.value,
-            // Don't store passwords in sessionStorage for security
-            role: roleSelect.value
-        };
-        
-        sessionStorage.setItem('partialUserData', JSON.stringify(currentFormData));
-        
-        // Redirect to login page
         window.location.href = 'login.html';
     });
     
     // Registration Form Validation
     regForm.addEventListener('submit', function(e) {
         e.preventDefault();
+        if (!validateForm()) return;
+        registerUser();
+    });
+    
+    function validateForm() {
         let isValid = true;
-        
-        // Reset error messages
-        usernameError.style.display = 'none';
-        emailError.style.display = 'none';
-        passwordError.style.display = 'none';
-        confirmPasswordError.style.display = 'none';
-        successMessage.style.display = 'none';
+        resetErrors();
         
         // Validate username
         if (usernameInput.value.length < 3 || usernameInput.value.length > 20) {
-            usernameError.style.display = 'block';
+            showError(usernameError);
             isValid = false;
         }
         
         // Validate email
         if (!validateEmail(emailInput.value)) {
-            emailError.style.display = 'block';
+            showError(emailError);
             isValid = false;
         }
         
         // Validate password
         if (passwordInput.value.length < 8) {
-            passwordError.style.display = 'block';
+            showError(passwordError);
             isValid = false;
         }
         
         // Validate password match
         if (passwordInput.value !== confirmPasswordInput.value) {
-            confirmPasswordError.style.display = 'block';
+            showError(confirmPasswordError);
             isValid = false;
         }
         
         // Validate role selected
         if (!roleSelect.value) {
+            alert('Please select a role');
             isValid = false;
         }
         
-        if (isValid) {
-            registerUser();
-        }
-    });
-    
-    // Email validation function
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
+        return isValid;
     }
     
-    // Register user
     function registerUser() {
         const user = {
             username: usernameInput.value,
@@ -123,33 +94,61 @@ document.addEventListener('DOMContentLoaded', function() {
             createdAt: new Date().toISOString()
         };
         
-        // Get existing users or initialize empty array
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        
-        // Check if email already exists
-        const emailExists = users.some(u => u.email === user.email);
-        if (emailExists) {
-            emailError.textContent = 'Email already registered';
-            emailError.style.display = 'block';
+        // Check if email already exists in either users or admins
+        if (isEmailRegistered(user.email)) {
+            showError(emailError, 'Email already registered');
             return;
         }
         
-        // Check if username already exists
-        const usernameExists = users.some(u => u.username === user.username);
-        if (usernameExists) {
-            usernameError.textContent = 'Username already taken';
-            usernameError.style.display = 'block';
+        // Check if username already exists in either users or admins
+        if (isUsernameRegistered(user.username)) {
+            showError(usernameError, 'Username already taken');
             return;
         }
         
-        // Add new user
-        users.push(user);
+        // Store user based on role
+        if (user.role === 'user') {
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+        } else { // admin or superadmin
+            const admins = JSON.parse(localStorage.getItem('admins')) || [];
+            admins.push(user);
+            localStorage.setItem('admins', JSON.stringify(admins));
+        }
         
-        // Store in localStorage
-        localStorage.setItem('users', JSON.stringify(users));
-        
-        // Show success message
+        // Show success and redirect
         successMessage.style.display = 'block';
-        regForm.reset();
+        alert('Registration successful!');
+        sessionStorage.setItem('user', JSON.stringify(user));
+        setTimeout(() => window.location.href = 'login.html', 1500);
+    }
+    
+    function isEmailRegistered(email) {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const admins = JSON.parse(localStorage.getItem('admins')) || [];
+        return [...users, ...admins].some(u => u.email === email);
+    }
+    
+    function isUsernameRegistered(username) {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const admins = JSON.parse(localStorage.getItem('admins')) || [];
+        return [...users, ...admins].some(u => u.username === username);
+    }
+    
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+    
+    function showError(element, message = null) {
+        if (message) element.textContent = message;
+        element.style.display = 'block';
+    }
+    
+    function resetErrors() {
+        [usernameError, emailError, passwordError, confirmPasswordError].forEach(el => {
+            el.style.display = 'none';
+        });
     }
 });
