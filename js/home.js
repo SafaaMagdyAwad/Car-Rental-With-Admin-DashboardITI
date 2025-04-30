@@ -14,33 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
         discription:
           "Rent a premium SUV this weekend and get 30% off. Perfect for road trips and family getaways.",
       },
-      {
-        id: 2,
-        carId:1,
-        image: "car (6).jpg",
-        title: "30% Off - SUV Rentals",
-        discription:
-          "Rent a premium SUV this weekend and get 30% off. Perfect for road trips and family getaways.",
-      },
-      {
-        id: 3,
-        carId:1,
-        image: "car (6).jpg",
-        title: "30% Off - SUV Rentals",
-        discription:
-          "Rent a premium SUV this weekend and get 30% off. Perfect for road trips and family getaways.",
-      },
-      {
-        id: 4,
-        carId:1,
-        image: "car (6).jpg",
-        title: "30% Off - SUV Rentals",
-        discription:
-          "Rent a premium SUV this weekend and get 30% off. Perfect for road trips and family getaways.",
-      },
+
     ];
     localStorage.setItem("offers", JSON.stringify(offers));
   }
+
   if (categories.length === 0) {
     categories = [
       {
@@ -127,6 +105,61 @@ if (cars.length === 0) {
 
     localStorage.setItem("cars", JSON.stringify(cars));
   }
+// Check if admins array exists in localStorage
+if (!localStorage.getItem("admins")) {
+  const admins = [
+    {
+      id: 1,
+      name: "Ahmed Mohamed",
+      email: "ahmed@carrental.com",
+      password: "Ahmed@123",
+      role: "Superadmin",
+      createdAt: new Date().toISOString(),
+    },
+    {
+      id: 2,
+      name: "Mariam Khalid",
+      email: "mariam@carrental.com",
+      password: "Mariam@123",
+      role: "admin",
+      createdAt: new Date().toISOString(),
+    },
+    {
+      id: 3,
+      name: "Ali Hassan",
+      email: "ali@carrental.com",
+      password: "Ali@12345",
+      role: "admin",
+      createdAt: new Date().toISOString(),
+    },
+    {
+      id: 4,
+      name: "Sara Abdullah",
+      email: "sara@carrental.com",
+      password: "Sara@123",
+      role: "admin",
+      createdAt: new Date().toISOString(),
+    },
+    {
+      id: 5,
+      name: "Khaled Ibrahim",
+      email: "khaled@carrental.com",
+      password: "Khaled@123",
+      role: "admin",
+      createdAt: new Date().toISOString(),
+    },
+    {
+      id: 6,
+      name: "Nora Saad",
+      email: "nora@carrental.com",
+      password: "Nora@1234",
+      role: "admin",
+      createdAt: new Date().toISOString(),
+    },
+  ];
+
+  localStorage.setItem("admins", JSON.stringify(admins));
+}
 
 let featuredCardbutton =document.querySelectorAll(".featuredCardbutton");
 let featuredCardTitles =document.querySelectorAll(".featuredCardTitle");
