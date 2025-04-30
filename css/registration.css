@@ -1,0 +1,116 @@
+:root {
+    --primary: #27548A;
+    --secondary: #183B4E;
+    --accent: #DDA853;
+    --light: #F5EEDC;
+    --white: #ffffff;
+    --error: #e74c3c;
+    --success: #2ecc71;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light);
+    color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.registration-container {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+}
+
+h1 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(221, 168, 83, 0.3);
+}
+
+.error-message {
+    color: var(--error);
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+}
+
+.btn-secondary {
+    background-color: var(--accent);
+    color: var(--secondary);
+}
+
+.btn-secondary:hover {
+    background-color: #d19b4a;
+}
+
+.success-message {
+    color: var(--success);
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+    display: none;
+}
+
+.role-description {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+@media (max-width: 480px) {
+    .registration-container {
+        padding: 20px;
+    }
+}
