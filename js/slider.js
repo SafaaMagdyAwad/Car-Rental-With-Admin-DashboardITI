@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const track = document.querySelector('.slider-track');
-    const slides = document.querySelectorAll('.slide');
+    const slides = document.querySelectorAll('.slideitem');
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');

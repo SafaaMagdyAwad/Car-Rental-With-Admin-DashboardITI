@@ -19,18 +19,23 @@
 
 </head>
 
-<body >
+<body>
     <!-- start navbar -->
     <nav class="navbar navbar-expand-lg mb-3">
         <div class="container">
-            <a class="navbar-brand fs-4 d-flex align-items-center" href="#"><i class="bi bi-car-front-fill"></i>RentCar</a>
-            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <a class="navbar-brand fs-4 d-flex align-items-center" href="#"><i
+                    class="bi bi-car-front-fill"></i>RentCar</a>
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="sideBar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="sideBar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header text-white border-bottom">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="bi bi-car-front-fill"></i>RentCar</h5>
-                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="bi bi-car-front-fill"></i>RentCar
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
                     <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
@@ -43,37 +48,38 @@
                         <li class="nav-item mx-2">
                             <a class="nav-link" href="car-list.html">Cars</a>
                         </li>
-                      
+
                     </ul>
                     <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
                         <a href="Login.html" class="btn btn-outline-dark rounded-pill px-4">
                             Login
                         </a>
-                        <a href="contactus.html" class="btn btn-primary rounded-pill px-4 d-flex align-items-center gap-2">
+                        <a href="contactus.html"
+                            class="btn btn-primary rounded-pill px-4 d-flex align-items-center gap-2">
                             Contact Us <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
-                        </a>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
+        </div>
     </nav>
-  <!-- end navbar  -->
-    
-        <div class="container pt-5 ">
-          <div class="card mb-3  shadow p-3 mb-5 bg-body-tertiary rounded " id="carCard">
-  
+    <!-- end navbar  -->
+
+    <div class="container pt-5 ">
+        <div class="card mb-3  shadow p-3 mb-5 bg-body-tertiary rounded " id="carCard">
 
 
-      </div>
+
+        </div>
     </div>
 
 
 
 
-      <!-- Footer Section -->
-      <footer class="footer-section">
+    <!-- Footer Section -->
+    <footer class="footer-section">
         <div class="container">
             <div class="row g-4">
                 <!-- Company Info -->
@@ -82,7 +88,8 @@
                         <i class="bi bi-car-front-fill"></i>
                         <span class="ms-2">RentCar</span>
                     </div>
-                    <p class="footer-text">We provide the best car rental solutions with guaranteed quality, comfort and safety.</p>
+                    <p class="footer-text">We provide the best car rental solutions with guaranteed quality, comfort and
+                        safety.</p>
                     <div class="social-icons">
                         <a href="#"><i class="bi bi-facebook"></i></a>
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
@@ -128,8 +135,8 @@
                     <p class="footer-text">Subscribe to get updates on our latest offers and services.</p>
                     <form class="newsletter-form">
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                            <button class="btn btn-primary" type="submit">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" email required>
+                            <button class="btn btn-primary" id="Newsletter" type="submit">
                                 <i class="bi bi-send-fill"></i>
                             </button>
                         </div>
@@ -156,58 +163,60 @@
     </footer>
 
 
-   
 
- <!-- Modal -->
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Booking Car 🚙 </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          <div class="container pt-4 border-cofee shadow rounded text-center bg-light text-darkblue p-5  mt-5" id="book">
-              <h2 class="p-5">Want to Book This Car 😃 </h2>
-              <p>Tell me When do you need it </p>
-              <form class="needs-validation" novalidate>
-                  <div class="row row-gap-3">
-                      <div class="col-md-4 col-sm-12">
-                          <label for="">From</label>
-                      </div>
-                      <div class="col-md-8 col-sm-12">
-                          <div class="input-group">
-                              <input type="date" name="" id="pickDate" class="form-control" required>
-                              <div class="invalid-feedback">Please choose a valid date.</div>
-                              <input type="time" name="" id="pickTime" class="form-control" required>
-                              <div class="invalid-feedback">Please choose a valid time.</div>
-                          </div>
-                      </div>
-                      <div class="col-md-4 col-sm-12 ">
-                          <label for="">To</label>
-                      </div>
-                      <div class="col-md-8 col-sm-12">
-                          <div class="input-group">
-                              <input type="date" name="" id="dropDate" class="form-control" required>
-                              <div class="invalid-feedback">Please choose a valid date.</div>
-                              <input type="time" name="" id="dropTime" class="form-control" required>
-                              <div class="invalid-feedback">Please choose a valid time.</div>
-                          </div>
-                      </div>
-                      <button type="submit" id="submitbooking" class="btn btn-primary">Submit</button>
-                  </div>
-              </form>
-          </div>
-      </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Booking Car 🚙 </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container pt-4 border-cofee shadow rounded text-center bg-light text-darkblue p-5  mt-5"
+                        id="book">
+                        <h2 class="p-5">Want to Book This Car 😃 </h2>
+                        <p>Tell me When do you need it </p>
+                        <form class="needs-validation" novalidate>
+                            <div class="row row-gap-3">
+                                <div class="col-md-4 col-sm-12">
+                                    <label for="">From</label>
+                                </div>
+                                <div class="col-md-8 col-sm-12">
+                                    <div class="input-group">
+                                        <input type="date" name="" id="pickDate" class="form-control" required>
+                                        <div class="invalid-feedback">Please choose a valid date.</div>
+                                        <input type="time" name="" id="pickTime" class="form-control" required>
+                                        <div class="invalid-feedback">Please choose a valid time.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12 ">
+                                    <label for="">To</label>
+                                </div>
+                                <div class="col-md-8 col-sm-12">
+                                    <div class="input-group">
+                                        <input type="date" name="" id="dropDate" class="form-control" required>
+                                        <div class="invalid-feedback">Please choose a valid date.</div>
+                                        <input type="time" name="" id="dropTime" class="form-control" required>
+                                        <div class="invalid-feedback">Please choose a valid time.</div>
+                                    </div>
+                                </div>
+                                <button type="submit" id="submitbooking" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
- 
+
 
 
 </body>
 
 <script src="js/car-detais.js"></script>
+<script src="js/news-letter.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"

@@ -1,11 +1,16 @@
 try to use style.css for styling
 <p>
-users=[{
-"id":1,
-"name":"user1",
-"email":"email@gmail.com",
-"password":"123"
-}];
+users=[ 
+    {
+        "id": 1,
+        "name": "user1 name",
+        "email": "user email",
+        "password": "password",
+        "role": "user",
+        "createdAt": "2025-05-01T12:14:48.050Z"
+    }
+]
+
 </p>
 <hr>
 <p>
@@ -42,16 +47,19 @@ image
 </p>
 <hr>
 <p>
-bookedCars=[{
-car-id
-pick-up-date
-pick-up-time
-drop-date
-drop-time
-user-name
-user-email
-"status": "pending",
-}];
+ bookobject = {
+                        "rent-id": ,
+                        "car-id": ,
+                        "pick-up-date": ,
+                        "pick-up-time": ,
+                        "drop-date": ,
+                        "drop-time": ,
+                        "user-name":,
+                        "user-email": ,
+                        "status": "pending",
+                        "created-at":new Date(),
+                        "prand":,
+                    }
 store if confirmed====>confirmation from the user
 used for rental reports
 

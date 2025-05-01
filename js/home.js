@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     categories = [
       {
         id: 1,
-        "category-title": "Sports Car",
+        "category-title": "Sports",
         image: "sports car.jpg",
       },
       {
@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <img src="images/categories/${category.image}" height="300px" width="100%"  class="card-img-top" alt="${category["category-title"]}">
                 <div class="card-body">
                     <h3 class="card-title text-lightblue">${category["category-title"]}</h3>
-                    <a href="car-list.html" class="btn btn-primary mt-4">Explore more 🌟 </a>
+                    <a href="car-list.html" class="btn btn-primary mt-4">Explore Cars 🌟 </a>
                 </div>
             </div>
         `;
