@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
@@ -15,139 +16,145 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/aboutus.css">
-  </head>
+</head>
+
 <body>
-    
 
-  <!-- start navbar -->
-   <nav class="navbar navbar-expand-lg mb-3">
-    <div class="container">
-        <a class="navbar-brand fs-4 d-flex align-items-center" href="#"><i class="bi bi-car-front-fill"></i>RentCar</a>
-        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="sideBar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header text-white border-bottom">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="bi bi-car-front-fill"></i>RentCar</h5>
-                <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-                <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
-                    <li class="nav-item mx-2">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="index.html#about">About</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="car-list.html">Cars</a>
-                    </li>
-                  
-                </ul>
-                <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                    <a href="Login.html" class="btn btn-outline-dark rounded-pill px-4">
-                        Login
-                    </a>
-                    <a href="contactus.html" class="btn btn-primary rounded-pill px-4 d-flex align-items-center gap-2">
-                        Contact Us <i class="bi bi-arrow-right"></i>
-                    </a>
+
+    <!-- start navbar -->
+    <nav class="navbar navbar-expand-lg mb-3">
+        <div class="container">
+            <a class="navbar-brand fs-4 d-flex align-items-center" href="index.html"><i
+                    class="bi bi-car-front-fill"></i>RentCar</a>
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="sideBar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header text-white border-bottom">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="bi bi-car-front-fill"></i>RentCar
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
+                <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+                    <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="index.html#about">About</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="car-list.html">Cars</a>
+                        </li>
+
+                    </ul>
+                    <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+                        <a  class="btn btn-outline-dark rounded-pill px-4" id="loginButton">
+                            Login
+                        </a>
+                        <a href="contactus.html"
+                            class="btn btn-primary rounded-pill px-4 d-flex align-items-center gap-2">
+                            Contact Us <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
                     </a>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
-<section class="car-slider">
-    <div class="slider-container">
-      <h2 class="slider-title" style="color: #183B4E;">Our Premium Collection</h2>
-      
-      <div class="slider">
-        <div class="slider-track">
-          <!-- Slide 1 -->
-          <div class="slide active">
-            <div class="car-image">
-              <img src="images/cars/mercedes.png" alt="Mercedes S-Class">
-            </div>
-            <div class="car-info">
-              <h3 style="color: #27548A;">Mercedes S-Class</h3>
-              <p class="category">Category: Luxury Sedan</p>
-            </div>
-          </div>
-          
-          <!-- Slide 2 -->
-          <div class="slide">
-            <div class="car-image">
-              <img src="images/cars/Bmw.png" alt="BMW X5">
-            </div>
-            <div class="car-info">
-              <h3 style="color: #27548A;">BMW X5</h3>
-              <p class="category">Category: Luxury SUV</p>
-            </div>
-          </div>
-          
-          <!-- Slide 3 -->
-          <div class="slide">
-            <div class="car-image">
-              <img src="images/cars/Porsche.png" alt="Porsche 911">
-            </div>
-            <div class="car-info">
-              <h3 style="color: #27548A;">Porsche 911</h3>
-              <p class="category">Category: Sports Car</p>
-            </div>
-          </div>
-          
-          <!-- Slide 4 -->
-          <div class="slide">
-            <div class="car-image">
-              <img src="images/cars/tesla.png" alt="Tesla Model S">
-            </div>
-            <div class="car-info">
-              <h3 style="color: #27548A;">Tesla Model S</h3>
-              <p class="category">Category: Electric Sedan</p>
-            </div>
-          </div>
-          
-          <!-- Slide 5 -->
-          <div class="slide">
-            <div class="car-image">
-              <img src="images/cars/Audi.png" alt="Audi r8" >
-            </div>
-            <div class="car-info">
-              <h3 style="color: #27548A;">Audi R8</h3>
-              <p class="category">Category: Supercar</p>
-            </div>
-          </div>
         </div>
-        
-        <!-- Navigation -->
-        <button class="slider-nav prev" style="color: #27548A;">❮</button>
-        <button class="slider-nav next" style="color: #27548A;">❯</button>
-          <pre>
-  
+    </nav>
+    <section class="car-slider">
+        <div class="slider-container">
+            <h2 class="slider-title" style="color: #183B4E;">Our Premium Collection</h2>
+
+            <div class="slider">
+                <div class="slider-track">
+                    <!-- Slide 1 -->
+                    <div class="slide slideitem active">
+                        <div class="car-image">
+                            <img src="images/cars/mercedes.png" alt="Mercedes S-Class">
+                        </div>
+                        <div class="car-info">
+                            <h3 style="color: #27548A;">Mercedes S-Class</h3>
+                            <p class="category">Category: Luxury Sedan</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide slideitem">
+                        <div class="car-image">
+                            <img src="images/cars/Bmw.png" alt="BMW X5">
+                        </div>
+                        <div class="car-info">
+                            <h3 style="color: #27548A;">BMW X5</h3>
+                            <p class="category">Category: Luxury SUV</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide slideitem">
+                        <div class="car-image">
+                            <img src="images/cars/Porsche.png" alt="Porsche 911">
+                        </div>
+                        <div class="car-info">
+                            <h3 style="color: #27548A;">Porsche 911</h3>
+                            <p class="category">Category: Sports Car</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="slide slideitem">
+                        <div class="car-image">
+                            <img src="images/cars/tesla.png" alt="Tesla Model S">
+                        </div>
+                        <div class="car-info">
+                            <h3 style="color: #27548A;">Tesla Model S</h3>
+                            <p class="category">Category: Electric Sedan</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="slide slideitem">
+                        <div class="car-image">
+                            <img src="images/cars/Audi.png" alt="Audi r8">
+                        </div>
+                        <div class="car-info">
+                            <h3 style="color: #27548A;">Audi R8</h3>
+                            <p class="category">Category: Supercar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <button class="slider-nav prev" style="color: #27548A;">❮</button>
+                <button class="slider-nav next" style="color: #27548A;">❯</button>
+                <pre>
+
           </pre>
-        <!-- Pagination -->
-        <div class="slider-pagination">
-          <span class="dot active" style="background-color: #27548A;"></span>
-          <span class="dot" style="background-color: #27548A;"></span>
-          <span class="dot" style="background-color: #27548A;"></span>
-          <span class="dot" style="background-color: #27548A;"></span>
-          <span class="dot" style="background-color: #27548A;"></span>
+                <!-- Pagination -->
+                <div class="slider-pagination">
+                    <span class="dot active" style="background-color: #27548A;"></span>
+                    <span class="dot" style="background-color: #27548A;"></span>
+                    <span class="dot" style="background-color: #27548A;"></span>
+                    <span class="dot" style="background-color: #27548A;"></span>
+                    <span class="dot" style="background-color: #27548A;"></span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-      <!-- <script src="js/slider.js"></script> -->
+    </section>
 
-<!-- featured vehicles Section -->
-<div class="contanier fearuredSection my-5 ">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
-            <h2 class="fearuredSection_header">Our Featured Vehicles</h2>
+    <!-- featured vehicles Section -->
+    <div class="contanier fearuredSection my-5 ">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
+                <h2 class="fearuredSection_header">Our Featured Vehicles</h2>
             </div>
 
         </div>
-        
+
         <div class="row  d-flex justify-content-center align-items-center ">
             <div class="card col-lg-3 col-md-12 m-3 featuredCard" style="width: 18rem">
                 <img src="" class="card-img-top featuredCardImage" alt="car" />
@@ -164,14 +171,15 @@
                             </div>
                             <div class="carousel-item">
                                 <p class="featuredCardCategory">Category : <span
-                                    class="featuredCardCategorySpan"></span></p>
-                                </div>
-                                <div class="carousel-item">
-                                    <p class="featuredCardPrice">Price : <span class="featuredCardPriceSpan"></span></p>
-                                </div>
+                                        class="featuredCardCategorySpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardPrice">Price : <span class="featuredCardPriceSpan"></span></p>
+                            </div>
                         </div>
                     </div>
-                    <a href="#" class="btn bookNowBtn featuredCardbutton ">Book Now <i class="bi bi-arrow-right "></i></a>
+                    <a href="#" class="btn bookNowBtn featuredCardbutton ">Book Now <i
+                            class="bi bi-arrow-right "></i></a>
                 </div>
             </div>
             <div class="card col-lg-3 col-md-12 m-3 featuredCard" style="width: 18rem">
@@ -189,18 +197,18 @@
                             </div>
                             <div class="carousel-item">
                                 <p class="featuredCardCategory">Category : <span
-                                    class="featuredCardCategorySpan"></span></p>
-                                </div>
-                                <div class="carousel-item">
-                                    <p class="featuredCardPrice">Price : <span class="featuredCardPriceSpan"></span></p>
-                                </div>
+                                        class="featuredCardCategorySpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardPrice">Price : <span class="featuredCardPriceSpan"></span></p>
                             </div>
                         </div>
-                        <a href="#" class="btn bookNowBtn featuredCardbutton">Book Now <i class="bi bi-arrow-right"></i></a>
                     </div>
+                    <a href="#" class="btn bookNowBtn featuredCardbutton">Book Now <i class="bi bi-arrow-right"></i></a>
                 </div>
+            </div>
             <div class="card col-lg-3 col-md-12 m-3 featuredCard" style="width: 18rem">
-                <img src="..." class="card-img-top featuredCardImage" alt="car" />
+                <img src="" class="card-img-top featuredCardImage" alt="car" />
                 <div class="card-body">
                     <h5 class="card-title featuredCardTitle " id="cardTitle3"></h5>
                     <!-- carousel -->
@@ -214,62 +222,64 @@
                             </div>
                             <div class="carousel-item">
                                 <p class="featuredCardCategory">Category : <span
-                                    class="featuredCardCategorySpan"></span></p>
-                                </div>
-                                <div class="carousel-item">
-                                    <p class="featuredCardPrice">Price : <span class="featuredCardPriceSpan"></span></p>
-                                </div>
+                                        class="featuredCardCategorySpan"></span></p>
+                            </div>
+                            <div class="carousel-item">
+                                <p class="featuredCardPrice">Price : <span class="featuredCardPriceSpan"></span></p>
                             </div>
                         </div>
-                        <a href="#" class="btn bookNowBtn featuredCardbutton">Book Now <i class="bi bi-arrow-right "></i></a>
                     </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                
-                <div class="col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
-                    <button class="btn ViewAllCars" onclick="window.open('car-list.html','_self')">View All Cars <i class="bi bi-arrow-right ms-2"></i></button>
+                    <a href="#" class="btn bookNowBtn featuredCardbutton">Book Now <i
+                            class="bi bi-arrow-right "></i></a>
                 </div>
             </div>
         </div>
-        
-        
 
-        
+        <div class="row">
 
-        <section class="p-4 text-center bg-ofwhite border border-cofee">
-            <h2 class="text-darkblue p-4">🔥 Special Offers</h2>
-            <div class="container">
-                
-                <div class="row mb-5" id="offers-container">
-
-                    
-                </div>
-                <!-- Add more offer cards as needed -->
+            <div class="col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
+                <button class="btn ViewAllCars" onclick="window.open('car-list.html','_self')">View All Cars <i
+                        class="bi bi-arrow-right ms-2"></i></button>
             </div>
-        </section>
-        <section class="p-4 text-center border-cofee">
-            <h2 class="text-darkblue p-4">🚗 our categories</h2>
-            <div class="container">
-                <div class="row  gap-0 row-gap-3" id="categories-container">
-                    
-                </div>
-                <!-- Add more categories cards as needed -->
+        </div>
+    </div>
+
+
+
+
+
+    <section class="p-4 text-center bg-ofwhite border border-cofee">
+        <h2 class="text-darkblue p-4">🔥 Special Offers</h2>
+        <div class="container">
+
+            <div class="row mb-5" id="offers-container">
+
+
             </div>
-        </section>
-        
-    </div> 
+            <!-- Add more offer cards as needed -->
+        </div>
+    </section>
+    <section class="p-4 text-center border-cofee">
+        <h2 class="text-darkblue p-4">🚗 our categories</h2>
+        <div class="container">
+            <div class="row  gap-0 row-gap-3" id="categories-container">
+
+            </div>
+            <!-- Add more categories cards as needed -->
+        </div>
+    </section>
+
+    </div>
 
 
 
-     <!-- About Us Section -->
-     <section class="about-section" id="about">
+    <!-- About Us Section -->
+    <section class="about-section" id="about">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-                         alt="Luxury Cars" class="img-fluid about-img rounded">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                        alt="Luxury Cars" class="img-fluid about-img rounded">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="section-title">
@@ -277,15 +287,15 @@
                         About <span style="color: var(--primary-color)">RentCar</span>
                     </h2>
                     <p class="lead" style="color: var(--dark-color)">
-                        RentCar is your premier choice for luxury and reliable car rentals in the city. 
+                        RentCar is your premier choice for luxury and reliable car rentals in the city.
                         We provide exceptional service with a fleet of well-maintained vehicles.
                     </p>
                     <p style="color: var(--dark-color)">
-                        With our commitment to quality and customer satisfaction, we ensure every rental 
-                        experience is seamless and enjoyable. Our team of professionals is dedicated to 
+                        With our commitment to quality and customer satisfaction, we ensure every rental
+                        experience is seamless and enjoyable. Our team of professionals is dedicated to
                         helping you find the perfect vehicle for your needs.
                     </p>
-                    
+
                     <div class="mt-4">
                         <div class="d-flex mb-3">
                             <i class="bi bi-check-circle-fill feature-icon me-3"></i>
@@ -309,7 +319,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <a href="contactus.html" class="btn btn-about mt-3">
                         Contact Us <i class="bi bi-arrow-right ms-2"></i>
                     </a>
@@ -317,8 +327,8 @@
             </div>
         </div>
     </section>
-     <!-- Footer Section -->
-     <footer class="footer-section">
+    <!-- Footer Section -->
+    <footer class="footer-section">
         <div class="container">
             <div class="row g-4">
                 <!-- Company Info -->
@@ -327,7 +337,8 @@
                         <i class="bi bi-car-front-fill"></i>
                         <span class="ms-2">RentCar</span>
                     </div>
-                    <p class="footer-text">We provide the best car rental solutions with guaranteed quality, comfort and safety.</p>
+                    <p class="footer-text">We provide the best car rental solutions with guaranteed quality, comfort and
+                        safety.</p>
                     <div class="social-icons">
                         <a href="#"><i class="bi bi-facebook"></i></a>
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
@@ -373,8 +384,8 @@
                     <p class="footer-text">Subscribe to get updates on our latest offers and services.</p>
                     <form class="newsletter-form">
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                            <button class="btn btn-primary" type="submit">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" email required>
+                            <button class="btn btn-primary" id="Newsletter" type="submit">
                                 <i class="bi bi-send-fill"></i>
                             </button>
                         </div>
@@ -399,15 +410,15 @@
             </div>
         </div>
     </footer>
-
-    <script src="js/home.js"></script>
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"> </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-    crossorigin="anonymous"></script>
-    
     <script src="js/slider.js"></script>
-    </body>
+
+    <script src="js/nav-bar.js"></script>
+    <script src="js/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script src="js/news-letter.js"></script>
+</body>
 
 </html>
