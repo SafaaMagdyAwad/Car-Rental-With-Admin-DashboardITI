@@ -93,6 +93,6 @@ function handleLoginSuccess(user, rememberMe, userType) {
     }
     
     const redirectPage = userType === 'admin' ? '/admin/admins.html' : 'index.html';
-    alert(`Welcome ${user.username || user.email}! Redirecting...`);
+    alert(`Welcome ${user.name || user.email}! Redirecting...`);
     window.location.href = redirectPage;
 }

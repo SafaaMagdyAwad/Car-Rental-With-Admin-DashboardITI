@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const regForm = document.getElementById('registrationForm');
-    const usernameInput = document.getElementById('username');
+    const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirm-password');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginBtn = document.getElementById('login-btn');
     const alreadyHaveAccountBtn = document.getElementById('login-btn'); 
 
-    const usernameError = document.getElementById('username-error');
+    const nameError = document.getElementById('name-error');
     const emailError = document.getElementById('email-error');
     const passwordError = document.getElementById('password-error');
     const confirmPasswordError = document.getElementById('confirm-password-error');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     loginBtn.addEventListener('click', function() {
         const userData = {
-            username: usernameInput.value,
+            name: nameInput.value,
             email: emailInput.value,
             role: roleSelect.value
         };
@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let isValid = true;
         resetErrors();
         
-        if (usernameInput.value.length < 3 || usernameInput.value.length > 20) {
-            showError(usernameError);
+        if (nameInput.value.length < 3 || nameInput.value.length > 20) {
+            showError(nameError);
             isValid = false;
         }
         
@@ -75,10 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         return isValid;
     }
-    
+    let users=JSON.parse(localStorage.getItem("users"))||[];
     function registerUser() {
         const user = {
-            username: usernameInput.value,
+            id:users.length+1,
+            name: nameInput.value,
             email: emailInput.value,
             password: passwordInput.value, 
             role: roleSelect.value,
@@ -90,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        if (isUsernameRegistered(user.username)) {
-            showError(usernameError, 'Username already taken');
+        if (isUsernameRegistered(user.name)) {
+            showError(nameError, 'Username already taken');
             return;
         }
         
@@ -117,10 +118,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return [...users, ...admins].some(u => u.email === email);
     }
     
-    function isUsernameRegistered(username) {
+    function isUsernameRegistered(name) {
         const users = JSON.parse(localStorage.getItem('users')) || [];
         const admins = JSON.parse(localStorage.getItem('admins')) || [];
-        return [...users, ...admins].some(u => u.username === username);
+        return [...users, ...admins].some(u => u.name === name);
     }
     
     function validateEmail(email) {
@@ -134,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function resetErrors() {
-        [usernameError, emailError, passwordError, confirmPasswordError].forEach(el => {
+        [nameError, emailError, passwordError, confirmPasswordError].forEach(el => {
             el.style.display = 'none';
         });
     }
