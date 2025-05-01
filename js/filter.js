@@ -23,7 +23,7 @@ export function filter() {
 
     if (availableCond) {
         cars.forEach((element) => {
-            if (element.available == true) {
+            if (element.avilable == true) {
                 valid.add(element);
             }
         })
@@ -35,6 +35,7 @@ export function filter() {
     });
 
     if (to500) {
+        
         cars.forEach((element) => {
             if (parseInt(element.price) <= 500) {
                 valid.add(element);
@@ -43,12 +44,13 @@ export function filter() {
     }
     if (to1000) {
         cars.forEach((element) => {
-            if (parseInt(element.price) <= 1000) {
+            if (parseInt(element.price) > 500 && parseInt(element.price) <= 1000) {
                 valid.add(element);
             }
         })
     }
     if (from1000) {
+        
         cars.forEach((element) => {
             if (parseInt(element.price) > 1000) {
                 valid.add(element);
@@ -57,6 +59,7 @@ export function filter() {
     }
 
     let parent = document.getElementById("cars-container");
+        
 
 
     if (valid.size <= 0) {
@@ -94,5 +97,9 @@ export function filter() {
                 </div>
             </div>`;
     });
+
+    if (filterElements.length == 0) {
+        window.location.reload();
+    }
 
 }
