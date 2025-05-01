@@ -37,20 +37,48 @@
     }
 
     // Render rental history
-    const historyContainer = document.getElementById("history-container");
-    if (carBookings.length > 0) {
-      carBookings.forEach(booking => {
-        historyContainer.innerHTML += `
-          <div class="history-entry">
-            <p><span class="bold">Pick-up Date:</span> ${formatDate(booking["pick-up-date"])} at ${booking["pick-up-time"] || 'N/A'}</p>
-            <p><span class="bold">Drop-off Date:</span> ${formatDate(booking["drop-date"])} at ${booking["drop-time"] || 'N/A'}</p>
-            <p><span class="bold">Booked At:</span> ${formatDateTime(booking["created-at"])}</p>
-          </div>
-        `;
-      });
-    } else {
-      historyContainer.innerHTML = `<div class="history-entry"><p>No rental history found for this car.</p></div>`;
-    }
+    let BookedCars = JSON.parse(localStorage.getItem("bookedCars"))||[];
+
+    BookedCars.forEach(book => {
+      if (book["car-id"] == carId && book["status"] == "confirmed") {
+          hasRental = true;
+          rentalheading.innerHTML = `
+                      <tr>
+                          <td>
+                              rented by
+                          </td>
+                          <td>
+                              from
+                          </td>
+                          <td>
+                              to
+                          </td>
+                      </tr>
+          `;
+          //show rental history  append elements
+          let row = document.createElement("tr");
+          let rentedbycol = document.createElement("td");
+          rentedbycol.innerText = book["user-name"]
+          let fromcol = document.createElement("td");
+          fromcol.innerText = `${book["pick-up-date"]}  ,${book["pick-up-time"]}`;
+          let tocol = document.createElement("td");
+          tocol.innerText = `${book["drop-date"]}  ,${book["drop-time"]}`;
+          row.appendChild(rentedbycol);
+          row.appendChild(fromcol);
+          row.appendChild(tocol);
+          renthistory.appendChild(row);
+      }
+
+  });
+  if (!hasRental) {
+      rentalheading.innerHTML = `
+          <div class="card text-bg-warning mb-3" style="max-width: 100vw;">
+              <div class="card-header"> No requests </div>
+              <div class="card-body">
+                  <p class="card-text">this car has no rental requests yet</p>
+              </div>
+          </div>`;
+  }
 
     // Helper functions for date formatting
     function formatDate(dateString) {
