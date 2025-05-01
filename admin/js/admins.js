@@ -104,40 +104,48 @@ function displayAdmins() {
   }
 }
 
-// add new admin
-function createAdmin() {
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const role = document.getElementById("role").value;
-  let id = admins.length;
-  let createdAt =new Date().toISOString();
-  let new_admin={
-    id: id,
-    name: name,
-    email: email,
-    password: password,
-    role: role,
-    createdAt: createdAt,
-  }
-//   const new_admin = { id,name, email, password,role,createdAt};
-  console.log(new_admin);
-  // Add the new user to the array
-  admins.push(new_admin);
-  // Store the updated array back to localStorage
-  localStorage.setItem("admins", JSON.stringify(admins));
-  // Clear input fields
-  document.getElementById("name").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("password").value = "";
-  document.getElementById("role").value = "";
-  alert("User created!");
-  
-  location.reload();
-}
+// // add new admin
+// function createAdmin(role) {
+//   if(role == "Superadmin"){
+//     const name = document.getElementById("name").value;
+//     const email = document.getElementById("email").value;
+//     const password = document.getElementById("password").value;
+//     const role = document.getElementById("role").value;
+//     let id = admins.length;
+//     let createdAt =new Date().toISOString();
+//     let new_admin={
+//       id: id,
+//       name: name,
+//       email: email,
+//       password: password,
+//       role: role,
+//       createdAt: createdAt,
+//     }
+//   //   const new_admin = { id,name, email, password,role,createdAt};
+//     console.log(new_admin);
+//     // Add the new user to the array
+//     admins.push(new_admin);
+//     // Store the updated array back to localStorage
+//     localStorage.setItem("admins", JSON.stringify(admins));
+//     // Clear input fields
+//     document.getElementById("name").value = "";
+//     document.getElementById("email").value = "";
+//     document.getElementById("password").value = "";
+//     document.getElementById("role").value = "";
+//     alert("User created!");
+    
+//     location.reload();
+
+//   }else{
+//     alert("Superadmin only can add ")
+//   }
+
+// }
 
 // delete Admin
- function deleteAdmin(superAdmin_id , admin_id , role) {
+ function deleteAdmin(currentUser_role ,superAdmin_id , admin_id , role) {
+
+  if (currentUser_role == "Superadmin") {
     let confirmed = confirm("are you sure to delete this admin?");
     if (confirmed == true) {
         let admins = JSON.parse(localStorage.getItem("admins")) || [];
@@ -145,7 +153,7 @@ function createAdmin() {
           console.log(admin_id);
           console.log(admins[index].role);
           
-            if( superAdmin_id==1 && admins[index].id == admin_id  && admin_id != 1  && role !="Superadmin"){
+            if( superAdmin_id && admins[index].id == admin_id  && admin_id != 1  && role !="Superadmin"){
                 admins.splice(index , 1);
                 localStorage.setItem("admins" , JSON.stringify(admins));
                 location.reload();
@@ -161,16 +169,27 @@ function createAdmin() {
         }
         
     }
+    
+  } else {
+    alert("Superadmin only can delete")
+  }
+    
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
-    displayAdmins();
-  document.getElementById("AddNewAdmin").addEventListener("click", createAdmin);
+  let currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+  displayAdmins();
+  // document.getElementById("AddNewAdmin").addEventListener("click", (event)=>{
+  //   validateForm();
+  //   if(validateForm()){
+  //     createAdmin(currentUser.role )
+  //   }
+       
+// });
   document.querySelectorAll(".deleteAdmin").forEach(element =>{
     element.addEventListener("click" , (event)=>{
-
-
-        deleteAdmin(1,event.target.dataset.id ,event.target.dataset.role )
+        deleteAdmin(currentUser.role,currentUser.id,event.target.dataset.id ,event.target.dataset.role )
         
     });
 });

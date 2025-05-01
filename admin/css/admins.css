@@ -9,8 +9,8 @@
   .newAdminData {
     padding: 50px;
     display: none;
-  }
-
-  .adding_tabel{
-
+  } 
+  .error {
+    color: red;
+    font-size: 14px;
   }
