@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="css/navbar_admin.css">
     <link rel="stylesheet" href="css/admins.css">
-    
+
     <script src="js/adminMiddleware.js"></script>
 
 </head>
@@ -19,52 +19,52 @@
 <body>
     <div class="container-fluid">
         <div class="row " id="row_parent">
-             <!-- offcanvas -->
-             <!-- <div class="col-md-2 col-sm-1 " id="offcanvas_div"> -->
-                <!-- <button class="btn  d-none" type="button" id="toggleButton" data-bs-toggle="offcanvas"
+            <!-- offcanvas -->
+            <!-- <div class="col-md-2 col-sm-1 " id="offcanvas_div"> -->
+            <!-- <button class="btn  d-none" type="button" id="toggleButton" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
                         class="bi bi-toggles2"></i></button> -->
-                <div class="offcanvas show col-md-2 col-sm-1 " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
-                    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i
-                                class="bi bi-car-front-fill"></i>RentCar</h5>
-                        <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
-                    </div>
-                    <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-                        <ul class="navbar-nav justify-content-around align-items-center fs-5 flex-grow-1 pe-3">
-                            <li class="nav-item mx-2">
-                                <a class="nav-link " aria-current="page" href="index.html">Dashboard</a>
-                            </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link " aria-current="page" href="cars-crud.html">Cars</a>
-                            </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link active" href="./admins.html">Admins</a>
-                            </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link" href="./rent-request.html">Booking</a>
-                            </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link" href="./contactMessages.html">Contact Messages</a>
-                            </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link " href="./offers.html">offers</a>
-                            </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link " href="./reviews.html">Reviews</a>
-                            </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link " href="./rental-reports.html">Reports</a>
-                            </li>
-
-                        </ul>
-                    </div>
+            <div class="offcanvas show col-md-2 col-sm-3 " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i class="bi bi-car-front-fill"></i>RentCar
+                    </h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
                 </div>
+                <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0 ">
+                    <ul class="navbar-nav justify-content-around align-items-center fs-5 flex-grow-1 pe-3">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link " aria-current="page" href="index.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link " aria-current="page" href="cars-crud.html">Cars</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" href="./admins.html">Admins</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="./rent-request.html">Booking</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="./contactMessages.html">Contact Messages</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link " href="./offers.html">offers</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link " href="./reviews.html">Reviews</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link " href="./rental-reports.html">Reports</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
             <!-- </div> -->
 
             <!-- dashboard content -->
-             <div class="col-md-9 col-sm-11 container">
+            <div class="col-md-9 col-sm-9 container ml_18em">
 
                 <table class="table table-bordered  table-striped table-hover mt-5 ">
                     <thead>
@@ -96,12 +96,31 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input type="text" name="" id="name" placeholder="enter name "></td>
-                                        <td><input type="email" name=""  id="email" placeholder="enter email"></td>
-                                        <td><input type="password" name="" id="password" placeholder="enter password"></td>
-                                        <td><input type="text" name="" id="role" placeholder="enter role "></td>
+                                        <form id="addForm">
+                                        <td><input type="text" name="" id="name" placeholder="enter name " required minlength="3" maxlength="20">
+                                            <span id="nameError" class="error">Username must be 3-20 characters</span><br>
+                                        </td>
+                                        <td><input type="email" name="" id="email" placeholder="enter email"
+                                            required    >
+                                            <span id="emailError" class="error">Please enter a valid email address</span><br>
+
+                                        </td>
+                                        <td><input type="password" name="" id="password" placeholder="enter password"
+                                            required minlength="8"   >
+                                            <span id="passwordError" class="error">Password must be at least 8 characters</span><br>
+                                        </td>
+                                        <td><select id="role" required>
+                                                <option value="" disabled selected>choose the role</option>
+                                                <option value="admin">Admin</option>
+                                                <option value="Superadmin">Superadmin</option>
+                                            </select>
+                                            <span id="roleError" class="error">Please select role</span><br>
+                                        </td>
+                                    </form>
                                     </tr>
-                                    <tr><td colspan="4"><input type="submit" value="Add new admin"  id="AddNewAdmin"></td></tr>
+                                    <tr>
+                                        <td colspan="4"><input type="submit" value="Add new admin" id="AddNewAdmin" ></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -116,8 +135,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap Bundle JS (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/navbar_admin.js"></script>
+    <!-- <script src="js/navbar_admin.js"></script> -->
     <script src="js/admins.js" type="module"></script>
+    <script type="module" src="js/addNewAdminValidation.js"></script>
 
 </body>
 
