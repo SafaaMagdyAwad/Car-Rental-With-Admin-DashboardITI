@@ -1,35 +1,20 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//     const offCanvas = document.querySelector('.offcanvas');
-//     const toggleButton = document.getElementById('toggleButton');
-//     const row_parent = document.getElementById('row_parent');
-//     // const offcanvas_div = document.getElementById('offcanvas_div');
-    
-//     // 
-    
-//     const mediaQuery = window.matchMedia('(max-width: 768px)');
-    
-//     function handleScreenChange(e) {
-//       if (e.matches) {
-//         offCanvas.classList.remove('show');
-//         offCanvas.classList.remove('offcanvas-start');
-//         offCanvas.classList.add('offcanvas-top');
-//         toggleButton.classList.remove('d-none');
-//         toggleButton.classList.add('d-block')
-//         offcanvas.remove()
-//         // offcanvas-top
-    
-//       } else {
-//         // Screen is wider than 768px
-//         row_parent.appendChild(offcanvas);
-//         offCanvas.classList.add('show'); 
-//         offCanvas.classList.remove('offcanvas-top');
-//         offCanvas.classList.add('offcanvas-start');
-//         toggleButton.classList.add('d-none'); 
-    
-//       }
-    
-//     }
-    
-//     mediaQuery.addEventListener('change', handleScreenChange);
-    
-//     });
+// dark mode 
+
+let darkmode = localStorage.getItem("darkmode");
+const themeSwitch =document.getElementById("theme_switch");
+const enableDarkmode=()=>{
+   document.body.classList.add("darkmode");
+    localStorage.setItem("darkmode" , "active");
+}
+
+const disableDarkmode=()=>{
+    document.body.classList.remove("darkmode");
+    localStorage.setItem("darkmode" , null);
+}
+
+if (darkmode === "active") enableDarkmode();
+
+themeSwitch.addEventListener("click", () => {
+    darkmode = localStorage.getItem("darkmode");
+    darkmode !== "active" ? enableDarkmode() : disableDarkmode();
+})
