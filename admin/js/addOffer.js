@@ -4,6 +4,7 @@ let offers = JSON.parse(localStorage.getItem("offers")) || [];
 let car = {};
 // console.log(carId);
 
+
 let cars = JSON.parse(localStorage.getItem("cars")) || [];
 console.log(cars);
 
@@ -13,6 +14,17 @@ cars.forEach(acar => {
     }
 });
 console.log(car);
+
+
+//make condition if the car has an offer it cant be deleted 
+let addanofferbutton = document.getElementById("addanoffer")
+console.log(addanofferbutton);
+
+
+
+
+
+
 if (Object.keys(car).length !== 0) {
     let carDetails = document.getElementById("carDetails");
     let card = document.createElement("div");
@@ -35,10 +47,10 @@ if (Object.keys(car).length !== 0) {
 
     let rentalheading = document.getElementById("rentalheading");
     let renthistory = document.getElementById("renthistory");
-    let BookedCars = JSON.parse(localStorage.getItem("bookedCars"))||[];
+    let BookedCars = JSON.parse(localStorage.getItem("bookedCars")) || [];
     let hasRental = false;
     console.log(BookedCars);
-    if(BookedCars.length==0){
+    if (BookedCars.length == 0) {
         rentalheading.innerHTML = `
         <div class="card text-bg-warning mb-3" style="max-width: 100vw;">
             <div class="card-header"> No requests </div>
@@ -46,7 +58,7 @@ if (Object.keys(car).length !== 0) {
                 <p class="card-text">this car has no rental requests yet</p>
             </div>
         </div>`;
-    }else{
+    } else {
 
         BookedCars.forEach(book => {
             if (book["car-id"] == carId && book["status"] == "confirmed") {
@@ -77,7 +89,7 @@ if (Object.keys(car).length !== 0) {
                 row.appendChild(tocol);
                 renthistory.appendChild(row);
             }
-    
+
         });
         if (!hasRental) {
             rentalheading.innerHTML = `
@@ -91,7 +103,7 @@ if (Object.keys(car).length !== 0) {
     }
 } else {
 
-    
+
     page.innerHTML = `
         <div class="card text-bg-warning mb-3" style="max-width: 100vw;">
             <div class="card-header">some thig went wrong</div>
@@ -120,19 +132,30 @@ submitoffer.addEventListener("click", (e) => {
         alert("Please Enter Valid Data");
     } else {
 
+        let offeredCarsIds = [];
+        offers.forEach(offer => {
+            offeredCarsIds.push(offer['carId']);
+        });
 
-        //storing the data
-        let offerobject = {
-            "id": offers.length,
-            "car-id": carId,
-            "image": car['image'],
-            "title": title,
-            "discription": discription,
+
+        if (offeredCarsIds.includes(car["id"])) {
+
+            alert("this car has an offer you cant add anothe one");
+        } else {
+            //storing the data
+
+            let offerobject = {
+                "id": offers.length,
+                "carId": car["id"],
+                "image": car['image'],
+                "title": title,
+                "discription": discription,
+            }
+            offers.push(offerobject);
+            //save in local storage
+            localStorage.setItem("offers", JSON.stringify(offers));
+            alert("Your offer was addes successfully😊 ");
         }
-        offers.push(offerobject);
-        //save in local storage
-        localStorage.setItem("offers", JSON.stringify(offers));
-        alert("Your offer was addes successfully😊 ");
 
     }
 });

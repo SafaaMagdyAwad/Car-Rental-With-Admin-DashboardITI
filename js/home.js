@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         id: 1,
         carId: 1,
-        image: "car (6).jpg",
+        image: "toyota2.avif",
         title: "30% Off - SUV Rentals",
         discription:
           "Rent a premium SUV this weekend and get 30% off. Perfect for road trips and family getaways.",
@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         avilable: true,
         category: `${categories[4]["category-title"]}`,
       },
+     
     ];
 
     localStorage.setItem("cars", JSON.stringify(cars));
@@ -193,39 +194,90 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   featuredCardbutton.forEach((featuredCardbutton, index) => {
-
-    featuredCardbutton.href = `car-details.html?id=${cars[index].id}`;
-
+    if (cars[index]) {
+      // console.log(cars[index].id);
+      featuredCardbutton.href = `car-details.html?id=${cars[index].id}`;
+    } else {
+      // Hide the parent card container
+      const card = featuredCardbutton.closest('.card'); // Replace '.card' with your actual container class
+      if (card) {
+        card.style.display = 'none';
+      }
+    }
   });
-  featuredCardImages.forEach((featuredCardImage, index) => {
 
-    featuredCardImage.src = `images/cars/${cars[index].image}`;
+  featuredCardImages.forEach((featuredCardImage, index) => {
+    if (cars[index]) {
+      // console.log(cars[index].id);
+        featuredCardImage.src = `images/cars/${cars[index].image}`;
+    } else {
+      // Hide the parent card container
+      const card = featuredCardImage.closest('.card'); // Replace '.card' with your actual container class
+      if (card) {
+        card.style.display = 'none';
+      }
+    }
 
   });
   featuredCardTitles.forEach((featuredCardTitle, index) => {
-
-    featuredCardTitle.innerHTML = cars[index].prand;
+    if (cars[index]) {
+      featuredCardTitle.innerHTML = cars[index].prand;
+    } else {
+      // Hide the parent card container
+      const card = featuredCardTitle.closest('.card'); // Replace '.card' with your actual container class
+      if (card) {
+        card.style.display = 'none';
+      }
+    }
 
   });
   featuredCardPriceSpans.forEach((featuredCardPriceSpan, index) => {
-
-    featuredCardPriceSpan.innerHTML = cars[index].price;
+    if (cars[index]) {
+      featuredCardPriceSpan.innerHTML = cars[index].price;
+    } else {
+      // Hide the parent card container
+      const card = featuredCardPriceSpan.closest('.card'); // Replace '.card' with your actual container class
+      if (card) {
+        card.style.display = 'none';
+      }
+    }
 
   });
 
   featuredCardModelSpans.forEach((featuredCardModelSpan, index) => {
-
-    featuredCardModelSpan.innerHTML = cars[index].model;
+    if (cars[index]) {
+      featuredCardModelSpan.innerHTML = cars[index].model;
+    } else {
+      // Hide the parent card container
+      const card = featuredCardModelSpan.closest('.card'); // Replace '.card' with your actual container class
+      if (card) {
+        card.style.display = 'none';
+      }
+    }
 
   });
   featuredCardTypeSpans.forEach((featuredCardTypeSpan, index) => {
-
-    featuredCardTypeSpan.innerHTML = cars[index].type;
+    if (cars[index]) {
+      featuredCardTypeSpan.innerHTML = cars[index].type;
+    } else {
+      // Hide the parent card container
+      const card = featuredCardTypeSpan.closest('.card'); // Replace '.card' with your actual container class
+      if (card) {
+        card.style.display = 'none';
+      }
+    }
 
   });
   featuredCardCategorySpans.forEach((featuredCardCategorySpan, index) => {
-
-    featuredCardCategorySpan.innerHTML = cars[index].category;
+    if (cars[index]) {
+      featuredCardCategorySpan.innerHTML = cars[index].category;
+    } else {
+      // Hide the parent card container
+      const card = featuredCardCategorySpan.closest('.card'); // Replace '.card' with your actual container class
+      if (card) {
+        card.style.display = 'none';
+      }
+    }
 
   });
 
