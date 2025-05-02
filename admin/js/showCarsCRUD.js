@@ -1,10 +1,12 @@
+import { checkDropDate } from "./checkDropDate.js";
 import { deleteCar } from "./deleteCar.js";
 import { toggleAvailability } from "./toggleAvailability.js";
 
 export function showCarsCRUD() {
     const raw_cars = localStorage.getItem("cars");
     let cars = JSON.parse(raw_cars);
-
+    const bookedCars = JSON.parse(localStorage.getItem("bookedCars"));
+    checkDropDate(bookedCars , cars);
 
     let parent = document.getElementById("tableBody");
 
