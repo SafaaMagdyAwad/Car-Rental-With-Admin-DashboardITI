@@ -76,9 +76,11 @@ function handleReviewSubmit(event) {
     const offers = JSON.parse(localStorage.getItem('offers')) || [];
     const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
+// console.log(currentUser);
+
     const newReview = {
         id: offers.length + 1,
-        "user-name": currentUser.username || currentUser.email.split('@')[0],
+        "user-name": currentUser.name || currentUser.email.split('@')[0],
         stars: stars,
         comment: comment,
         "created-at": new Date().toDateString(),

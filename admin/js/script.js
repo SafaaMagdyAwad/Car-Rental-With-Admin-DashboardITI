@@ -1,58 +1,58 @@
 // Check if users array exists in localStorage
-if (!localStorage.getItem("users")) {
-    const users = [
-      {
-        id: 1,
-        name: "Ahmed Mohamed",
-        email: "ahmed@carrental.com",
-        password: "Ahmed@123",
-        role: "user",
-        createdAt: new Date().toISOString(),
-      },
-      {
-        id: 2,
-        name: "Mariam Khalid",
-        email: "mariam@carrental.com",
-        password: "Mariam@123",
-        role: "user",
-        createdAt: new Date().toISOString(),
-      },
-      {
-        id: 3,
-        name: "Ali Hassan",
-        email: "ali@carrental.com",
-        password: "Ali@12345",
-        role: "user",
-        createdAt: new Date().toISOString(),
-      },
-      {
-        id: 4,
-        name: "Sara Abdullah",
-        email: "sara@carrental.com",
-        password: "Sara@123",
-        role: "user",
-        createdAt: new Date().toISOString(),
-      },
-      {
-        id: 5,
-        name: "Khaled Ibrahim",
-        email: "khaled@carrental.com",
-        password: "Khaled@123",
-        role: "user",
-        createdAt: new Date().toISOString(),
-      },
+// if (!localStorage.getItem("users")) {
+//     const users = [
+//       {
+//         id: 1,
+//         name: "Ahmed Mohamed",
+//         email: "ahmed@carrental.com",
+//         password: "Ahmed@123",
+//         role: "user",
+//         createdAt: new Date().toISOString(),
+//       },
+//       {
+//         id: 2,
+//         name: "Mariam Khalid",
+//         email: "mariam@carrental.com",
+//         password: "Mariam@123",
+//         role: "user",
+//         createdAt: new Date().toISOString(),
+//       },
+//       {
+//         id: 3,
+//         name: "Ali Hassan",
+//         email: "ali@carrental.com",
+//         password: "Ali@12345",
+//         role: "user",
+//         createdAt: new Date().toISOString(),
+//       },
+//       {
+//         id: 4,
+//         name: "Sara Abdullah",
+//         email: "sara@carrental.com",
+//         password: "Sara@123",
+//         role: "user",
+//         createdAt: new Date().toISOString(),
+//       },
+//       {
+//         id: 5,
+//         name: "Khaled Ibrahim",
+//         email: "khaled@carrental.com",
+//         password: "Khaled@123",
+//         role: "user",
+//         createdAt: new Date().toISOString(),
+//       },
       
-    ];
+//     ];
   
-    localStorage.setItem("users", JSON.stringify(users));
-  }
+//     localStorage.setItem("users", JSON.stringify(users));
+//   }
 let admins;
 let cars;
 let users;
 if (localStorage.getItem("admins") || localStorage.getItem("cars") || localStorage.getItem("users")) {
     admins = JSON.parse(localStorage.getItem("admins"));
     cars = JSON.parse(localStorage.getItem("cars"));
-    users = JSON.parse(localStorage.getItem("users"));
+    users = JSON.parse(localStorage.getItem("users"))||[];
 
 }else
 {
