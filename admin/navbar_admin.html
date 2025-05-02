@@ -18,16 +18,18 @@
     <div class="container-fluid">
         <div class="row " id="row_parent">
             <!-- offcanvas -->
-            <div class="col-md-2 col-sm-3 " id="offcanvas_div">
-                <button class="btn  d-none" type="button" id="toggleButton" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
-                        class="bi bi-toggles2"></i></button>
-                <div class="offcanvas show" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                <div class="offcanvas show show col-md-2 col-sm-1" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
                     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+
+                    <!-- darkmode button  -->
+                    <button id="theme_switch">
+                        <i class="bi bi-moon-fill"></i>
+                        <i class="bi bi-brightness-high-fill"></i>
+                    </button>
+
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i
                                 class="bi bi-car-front-fill"></i>RentCar</h5>
-                        <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
                     </div>
                     <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
                         <ul class="navbar-nav justify-content-around align-items-center fs-5 flex-grow-1 pe-3">
@@ -56,7 +58,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            
 
             <div class="col-md-9 col-sm-11">
 
@@ -72,6 +74,7 @@
 
     <!-- Bootstrap Bundle JS (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/navbar_admin.js"></script>
 
 
 </body>

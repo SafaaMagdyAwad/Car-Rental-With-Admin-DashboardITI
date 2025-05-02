@@ -79,4 +79,46 @@
     color: var(--accent-color) !important;
     transform: translateX(5px);
   }
+  /* theme switch */
+
+  .darkmode{
+    --base-color : #070b1d;
+    --base-variant: #101425;
+    --text-color :#ffffff;
+    --secondary-text : #a4a5b8;
+    --primary-color :#3a435d;
+    --accent-color : #27548a;
+  }
   
+  #theme_switch{
+    height: 3em ;
+    width: 3em ;
+    padding: 0px;
+    border-radius: 50%;
+    background-color: #f5eedc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+
+  #theme_switch i {
+    color: #183b4e;
+    font-size: 1.5em;
+
+  }
+
+  
+  #theme_switch i:last-child {
+    display: none;
+  }
+
+  .darkmode #theme_switch i:first-child {
+    display: none;
+  }
+
+  .darkmode #theme_switch i:last-child {
+    display: block;
+  }
