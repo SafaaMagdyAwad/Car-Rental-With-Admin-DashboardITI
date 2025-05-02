@@ -1,4 +1,3 @@
-// Initialize reviews data if empty
 function initializeReviews() {
     if (!localStorage.getItem('reviews')) {
         const initialReviews = [
@@ -8,7 +7,7 @@ function initializeReviews() {
                 stars: 4,
                 comment: "this site is a good one",
                 "created-at": new Date().toDateString(),
-                "is-hidden": true, // كل الـ reviews بتكون مخفية بشكل افتراضي
+                "is-hidden": true, 
                 "user-email": "mohammad@example.com"
             }
         ];
@@ -16,14 +15,12 @@ function initializeReviews() {
     }
 }
 
-// Display reviews - ستعرض فقط الـ reviews الغير مخفية
 function displayReviews() {
     const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
     const reviewsContainer = document.getElementById('reviews-container');
     
     reviewsContainer.innerHTML = '';
 
-    // فلترة لعرض فقط الـ reviews التي is-hidden = false
     const visibleReviews = reviews.filter(review => review["is-hidden"] === false);
 
     if (visibleReviews.length === 0) {
@@ -53,7 +50,6 @@ function displayReviews() {
     });
 }
 
-// Handle review submission - كل الـ reviews الجديدة بتكون مخفية
 function handleReviewSubmit(event) {
     event.preventDefault();
     
@@ -86,7 +82,7 @@ function handleReviewSubmit(event) {
         stars: stars,
         comment: comment,
         "created-at": new Date().toDateString(),
-        "is-hidden": true, // الـ review الجديدة بتكون مخفية
+        "is-hidden": true,
         "user-email": currentUser.email
     };
 
@@ -99,7 +95,6 @@ function handleReviewSubmit(event) {
     alert('Your review has been submitted and will be visible after approval.');
 }
 
-// Initialize star rating
 function initStarRating() {
     const stars = document.querySelectorAll('.star');
     const starsInput = document.getElementById('stars');
@@ -120,7 +115,6 @@ function initStarRating() {
     });
 }
 
-// Helper function for manual review approval
 function approveReview(reviewId) {
     const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
     const reviewIndex = reviews.findIndex(r => r.id === reviewId);
@@ -131,7 +125,6 @@ function approveReview(reviewId) {
     }
 }
 
-// Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
     initializeReviews();
     displayReviews();
