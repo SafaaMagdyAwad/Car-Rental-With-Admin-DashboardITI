@@ -16,8 +16,7 @@ cars.forEach(acar => {
     }
 });
 
-// console.log(car);
-
+console.log(user.name);
 let carCard = document.getElementById("carCard");
 
 if (Object.keys(car).length === 0) {
@@ -149,7 +148,10 @@ if (Object.keys(car).length === 0) {
                         "created-at":new Date(),
                         "prand":car["prand"],
                     }
+                    // debugger;
                     bookedCars.push(bookobject);
+                    console.log(bookedCars);
+
                     //save in local storage
                     localStorage.setItem("bookedCars", JSON.stringify(bookedCars));
                     alert("You book Request is sent to admin now 😊");

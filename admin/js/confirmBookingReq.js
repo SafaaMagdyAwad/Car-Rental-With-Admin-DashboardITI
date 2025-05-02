@@ -1,5 +1,5 @@
 export function confirmBookingReq(carId, userEmail, bookedCars, cars, rentId) {
-    debugger;
+    // debugger;
     let cond = confirm("are you sure you want to confirm this request?");
     let confirmedCars;
     let tempIndex;
