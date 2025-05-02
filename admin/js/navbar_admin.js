@@ -18,3 +18,10 @@ themeSwitch.addEventListener("click", () => {
     darkmode = localStorage.getItem("darkmode");
     darkmode !== "active" ? enableDarkmode() : disableDarkmode();
 })
+
+
+pageHeight=document.body.scrollHeight;
+console.log("Page height:", pageHeight);
+let nav=document.getElementById("offcanvasScrolling");
+nav.style.height=`${pageHeight}px`;
+
