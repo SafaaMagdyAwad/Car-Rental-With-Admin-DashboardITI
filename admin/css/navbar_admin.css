@@ -1,10 +1,8 @@
-color{
-    color: #f5eedc;
-color: #27548a;
-color: #183b4e;
-color: #dda853;
-}
 
+:root{
+  --base-color : #f3f3f3;
+  --text-color :#27548a;
+}
 body{
     height: 100%;
 }
@@ -14,12 +12,14 @@ body{
     left: 0; */
     position: static !important;
     height: 100vh;
-    background-color: #f3f3f3;
-    
+    background-color: var(--base-color);
+    border-right: 5px solid var(--text-color);
+    border-left: 5px solid var(--text-color);
+
 }
 
 .offcanvas-title,.nav-link{
- color: #27548a;
+ color: var(--text-color);
 }
 .bi.bi-car-front-fill{
     font-size: 1.5em;
@@ -31,15 +31,20 @@ body{
     color: rgb(253, 134, 154)  !important;
   }
 
+  .nav-item.mx-2{
+    width: 100%;
+    text-align: center;
+  }
+
 /* theme switch */
 
 .darkmode{
   --base-color : #070b1d;
-  --base-variant: #101425;
+  /* --base-variant: #101425; */
   --text-color :#ffffff;
   --secondary-text : #a4a5b8;
-  --primary-color :#3a435d;
-  --accent-color : #27548a;
+  /* --primary-color :#3a435d; */
+  /* --accent-color : #27548a; */
 }
 
 #theme_switch{

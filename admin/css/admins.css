@@ -1,3 +1,13 @@
+:root{
+  --base-color : #f3f3f3;
+  --text-color :#27548a;
+}
+
+
+body{
+  background-color: var(--base-color);
+}
+
 .clickToAdd,.newAdminData {
     padding: 5px;
     text-align: center;

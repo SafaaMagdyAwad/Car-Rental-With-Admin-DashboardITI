@@ -10,11 +10,23 @@
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
          <!-- bootstrap 5 icons cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    
-    <!-- <link rel="stylesheet" href="css/navbar_admin.css"> -->
-    <link rel="stylesheet" href="css/navbar_admin.css">
+        <link rel="stylesheet" href="css/navbar_admin.css">
 
     <script src="js/adminMiddleware.js"></script>
+    <style>
+        :root{
+        --base-color : #f3f3f3;
+        --text-color :#27548a;
+        }
+
+
+        body{
+        background-color: var(--base-color);
+        }
+        .header{
+            color: var(--text-color);
+        }
+    </style>
 
 </head>
 
@@ -32,7 +44,6 @@
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i
                                 class="bi bi-car-front-fill"></i>RentCar</h5>
-                        <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
                     </div>
                     <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
                         <ul class="navbar-nav justify-content-around align-items-center fs-5 flex-grow-1 pe-3">
@@ -65,17 +76,22 @@
 
             <div class="col-md-9 col-sm-11">
                 <div class="row">
-                    <h1 class="text-center text-success p-5">Rental Reports</h1>
+                    <!-- theme button -->
+                    <button id="theme_switch">
+                        <i class="bi bi-moon-fill"></i>
+                        <i class="bi bi-brightness-high-fill"></i>
+                    </button>
+                    <h1 class="text-center  p-5 header">Rental Reports</h1>
                     <div class="col-lg-6 col-md-6 col-sm-12" style="height: 100vh;">
-                        <h1 class="text-center text-darkblue p-5"> Yearly </h1>
-                        <p class="text-center text-success">represntens number if rented cars each month</p>
+                        <h1 class="text-center text-darkblue p-5 header"> Yearly </h1>
+                        <p class="text-center text-success ">represntens number if rented cars each month</p>
                         <div class="card">
                             <iframe src="reports/yearlyRentReport.html" frameborder="0" width="100%"
                                 height="400px"></iframe>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        <h1 class="text-center text-darkblue p-5"> Monthly </h1>
+                        <h1 class="text-center text-darkblue p-5 header"> Monthly </h1>
                         <p class="text-center text-success">represntens number if rented cars in the current month each
                             day</p>
                         <div class="card">
@@ -83,7 +99,7 @@
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <h1 class="text-center text-darkblue p-5"> Peak Hours </h1>
+                        <h1 class="text-center text-darkblue p-5 header"> Peak Hours </h1>
                         <p class="text-center text-success">show the most active time that users book cars in</p>
                         <div class="card">
                             <iframe src="reports/peak-hours-report.html" frameborder="0" width="100%" height="700px"></iframe>
@@ -96,7 +112,7 @@
     </div>
     
 
-    <!-- <script src="js/admin_navbar.js"></script> -->
+    <script src="js/navbar_admin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>

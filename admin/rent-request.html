@@ -16,6 +16,18 @@
         .object-fit-cover {
             object-fit: cover;
         }
+        :root{
+        --base-color : #f3f3f3;
+        --text-color :#27548a;
+        }
+
+
+        body{
+        background-color: var(--base-color);
+        }
+        .rent_request{
+            color: var(--text-color);
+        }
     </style>
 
     <script src="js/adminMiddleware.js"></script>
@@ -34,7 +46,6 @@
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i class="bi bi-car-front-fill"></i>RentCar
                     </h5>
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
                 </div>
                 <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
                     <ul class="navbar-nav justify-content-around align-items-center fs-5 flex-grow-1 pe-3">
@@ -68,7 +79,12 @@
                 <div class="container">
                     <div class="row text-center justify-content-center">
                         <div class="col-lg-12">
-                            <h1 class="my-3"><b>Rent Requests</b></h1>
+                            <h1 class="my-3 rent_request"><b>Rent Requests</b></h1>
+                            <!-- theme button -->
+                            <button id="theme_switch">
+                                <i class="bi bi-moon-fill"></i>
+                                <i class="bi bi-brightness-high-fill"></i>
+                            </button>
                             <div class="row shadow rounded" id="requestsHolder">
                                 <!-- content will be added here! -->
 

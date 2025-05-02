@@ -11,8 +11,21 @@
     <!-- bootstrap 5 icons cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-    <!-- <link rel="stylesheet" href="css/navbar_admin.css"> -->
     <link rel="stylesheet" href="css/navbar_admin.css">
+    <style>
+        :root{
+        --base-color : #f3f3f3;
+        --text-color :#27548a;
+        }
+
+
+        body{
+        background-color: var(--base-color);
+        }
+        .header{
+            color: var(--text-color);
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -27,10 +40,12 @@
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i
                                 class="bi bi-car-front-fill"></i>RentCar</h5>
-                        <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
                     </div>
                     <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
                         <ul class="navbar-nav justify-content-around align-items-center fs-5 flex-grow-1 pe-3">
+                            <li class="nav-item mx-2">
+                                <a class="nav-link " aria-current="page" href="index.html">Dashboard</a>
+                            </li>
                             <li class="nav-item mx-2">
                                 <a class="nav-link " aria-current="page" href="cars-crud.html">Cars</a>
                             </li>
@@ -61,7 +76,12 @@
             <div class="col-md-9 col-sm-11">
 
                 <div class="container mt-5">
-                    <h1 class="text-center text-primary">Reviews</h1>
+                    <!-- theme button -->
+                    <button id="theme_switch">
+                        <i class="bi bi-moon-fill"></i>
+                        <i class="bi bi-brightness-high-fill"></i>
+                    </button>
+                    <h1 class="text-center header">Reviews</h1>
                     <table class="table text-center" id="table">
                         <thead>
                           <tr>
@@ -90,7 +110,7 @@
 
     <script src="js/reviews.js"></script>
 
-    <!-- <script src="js/admin_navbar.js"></script> -->
+    <script src="js/navbar_admin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
