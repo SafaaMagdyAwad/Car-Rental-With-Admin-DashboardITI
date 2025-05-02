@@ -7,11 +7,28 @@
     <!-- bootstrab -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+     <!-- bootstrap 5 icons cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
      <!-- font awsome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <link rel="stylesheet" href="css/navbar_admin.css">
 
      <script src="js/adminMiddleware.js"></script>
+     <style>
+        :root{
+        --base-color : #f3f3f3;
+        --text-color :#27548a;
+        }
+
+
+        body{
+        background-color: var(--base-color);
+        }
+        .header{
+            color: var(--text-color);
+        }
+    </style>
     </head>
 <body>
 
@@ -19,16 +36,11 @@
     <div class="container-fluid">
         <div class="row " id="row_parent">
              <!-- offcanvas -->
-             <!-- <div class="col-md-2 col-sm-1 " id="offcanvas_div"> -->
-                <!-- <button class="btn  d-none" type="button" id="toggleButton" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
-                        class="bi bi-toggles2"></i></button> -->
                 <div class="offcanvas show col-md-2 col-sm-1 " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
                     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i
                                 class="bi bi-car-front-fill"></i>RentCar</h5>
-                        <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
                     </div>
                     <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
                         <ul class="navbar-nav justify-content-around align-items-center fs-5 flex-grow-1 pe-3">
@@ -64,11 +76,16 @@
 
             <!-- dashboard content -->
              <div class="col-md-9 col-sm-11 container">
-          
+          <!-- theme button -->
+          <button id="theme_switch">
+            <i class="bi bi-moon-fill"></i>
+            <i class="bi bi-brightness-high-fill"></i>
+        </button>
+        <h1 class="text-center header p-3 mb-2">Manage the offers <i class="fa-solid fa-pen-to-square"></i> </h1>
+
           <!-- offers table code start -->
         <div class="bg-light shadow p-3 mb-5 bg-body rounded mt-5" >
             
-            <h1 class="text-center text-primary p-3 mb-5">Manage the offers <i class="fa-solid fa-pen-to-square"></i> </h1>
             <table class="table">
                 <thead class="table-dark">
                   <tr>
@@ -92,5 +109,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
     crossorigin="anonymous"></script>
+    <script src="js/navbar_admin.js"></script>
 </body>
 </html>

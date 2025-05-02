@@ -1,3 +1,15 @@
+:root{
+  --base-color : #f3f3f3;
+  --text-color :#27548a;
+}
+
+
+body{
+  background-color: var(--base-color);
+}
+.car_control{
+  color: var(--text-color);
+}
 .table-wrapper {
     background: #fff;
     padding: 2rem;
