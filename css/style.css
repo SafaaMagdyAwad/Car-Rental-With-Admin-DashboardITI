@@ -1,49 +1,61 @@
 
+:root{
+  --base-color : white;
+  --base-variant: #f5eedc;
+  --text-color :#183b4e;
+  --secondary-text : var(--accent-color);
+  --primary-color :#27548a;
+  --accent-color : #dda853;
+
+}
+
 body {
   overflow-x: hidden;
+  background-color: var(--base-color);
+  color: var(--text-color);
 }
 
 /* .fearuredSection {
 } */
 .fearuredSection_header {
-  color: #183b4e;
+  color: var(--text-color);
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
 }
 .btn.ViewAllCars {
-  color: #f5eedc;
+  color: var(--base-variant);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #dda853;
+  background-color: var(--accent-color);
   width: 13em;
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
 }
 
 .btn.ViewAllCars:hover {
-  color: #f5eedc;
-  background-color: #183b4e;
+  color: var(--base-variant);
+  background-color: var(--text-color);
 }
 
 .featuredCard {
-  border: 1px solid #dda853;
+  border: 1px solid var(--accent-color);
   height: 20em;
-  box-shadow: 1px 1px 1px #dda853;
+  box-shadow: 1px 1px 1px var(--accent-color);
   display: flex;
   align-items: start;
   animation: scaleUp 4s ease 1s;
 }
 
 .featuredCardTitle {
-  color: #183b4e;
+  color: var(--text-color);
   height: 2em;
 }
 .featuredCardType,
 .featuredCardModel,
 .featuredCardPrice,
 .featuredCardCategory {
-  color: #27548a;
+  color: var(--primary-color);
   font-weight: bold;
 }
 
@@ -51,20 +63,20 @@ body {
 .featuredCardModelSpan,
 .featuredCardCategorySpan,
 .featuredCardPriceSpan {
-  color: #dda853;
+  color: var(--accent-color);
 }
 
 .btn.bookNowBtn {
-  color: #27548a;
+  color: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5eedc;
+  background-color: var(--base-variant);
   width: 13em;
 }
 .btn.bookNowBtn:hover {
-  color: #f5eedc;
-  background-color: #27548a;
+  color: var(--base-variant);
+  background-color: var(--primary-color);
 }
 .btn.bookNowBtn .bi.bi-arrow-right {
   margin-left: 1em;
@@ -82,39 +94,39 @@ body {
 /* offer */
 
 .text-ofwhite {
-  color: #f5eedc;
+  color: var(--base-variant);
 }
 
 .bg-ofwhite {
-  background-color: #f5eedc;
+  background-color: var(--base-variant);
 }
 
 .text-darkblue {
-  color: #183b4e;
+  color: var(--text-color);
 }
 
 .bg-blue {
-  background-color: #183b4e;
+  background-color: var(--text-color);
 }
 
 .text-lightblue {
-  color: #27548a;
+  color: var(--primary-color);
 }
 
 .bg-lightblue {
-  background-color: #27548a;
+  background-color: var(--primary-color);
 }
 
 .text-cofee {
-  color: #dda853;
+  color: var(--accent-color);
 }
 
 .bg-cofee {
-  background-color: #dda853;
+  background-color: var(--accent-color);
 }
 
 .border-cofee {
-  border: 1px solid #dda853;
+  border: 1px solid var(--accent-color);
 }
 
 @keyframes fadeInUp {
