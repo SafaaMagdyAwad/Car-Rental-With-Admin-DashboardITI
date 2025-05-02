@@ -9,11 +9,11 @@ body{
     height: 100%;
 }
 .offcanvas{
-    position: fixed;
+    /* position: fixed;
     top: 0;
-    left: 0;
-    /* position: static !important; */
-    /* height: 100vh; */
+    left: 0; */
+    position: static !important;
+    height: 100vh;
     background-color: #f3f3f3;
     
 }

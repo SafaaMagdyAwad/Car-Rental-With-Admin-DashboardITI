@@ -1,5 +1,5 @@
 export function deleteBookingReq(carId, userEmail, bookedCars) {
-    debugger;
+    // debugger;
     let cond = confirm("are you sure you want to delete this request?");
     if (cond == true) {
         for (let index = 0; index < bookedCars.length; index++) { // id for rent should be added 

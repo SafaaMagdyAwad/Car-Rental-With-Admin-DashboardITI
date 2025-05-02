@@ -1,4 +1,4 @@
-// default if it is empty
+// Initialize reviews data if empty
 function initializeReviews() {
     if (!localStorage.getItem('reviews')) {
         const initialReviews = [
@@ -8,7 +8,7 @@ function initializeReviews() {
                 stars: 4,
                 comment: "this site is a good one",
                 "created-at": new Date().toDateString(),
-                "is-hidden": false,
+                "is-hidden": true, // كل الـ reviews بتكون مخفية بشكل افتراضي
                 "user-email": "mohammad@example.com"
             }
         ];
@@ -16,30 +16,26 @@ function initializeReviews() {
     }
 }
 
+// Display reviews - ستعرض فقط الـ reviews الغير مخفية
 function displayReviews() {
     const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
     const reviewsContainer = document.getElementById('reviews-container');
     
     reviewsContainer.innerHTML = '';
 
-    const validReviews = reviews.filter(review => 
-        !review["is-hidden"] && 
-        review["user-name"] && 
-        !isNaN(review.stars) && 
-        review.comment && 
-        review["created-at"]
-    );
+    // فلترة لعرض فقط الـ reviews التي is-hidden = false
+    const visibleReviews = reviews.filter(review => review["is-hidden"] === false);
 
-    if (validReviews.length === 0) {
+    if (visibleReviews.length === 0) {
         reviewsContainer.innerHTML = `
             <div class="no-reviews">
-                No reviews found
+                No reviews available
             </div>
         `;
         return;
     }
 
-    validReviews.forEach(review => {
+    visibleReviews.forEach(review => {
         const reviewElement = document.createElement('div');
         reviewElement.className = 'review-card';
         reviewElement.innerHTML = `
@@ -57,7 +53,7 @@ function displayReviews() {
     });
 }
 
-// handle review submission
+// Handle review submission - كل الـ reviews الجديدة بتكون مخفية
 function handleReviewSubmit(event) {
     event.preventDefault();
     
@@ -85,12 +81,12 @@ function handleReviewSubmit(event) {
     const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
     const newReview = {
-        id: offers.length + 1, // Exactly as requested
+        id: offers.length + 1,
         "user-name": currentUser.username || currentUser.email.split('@')[0],
         stars: stars,
         comment: comment,
         "created-at": new Date().toDateString(),
-        "is-hidden": false,
+        "is-hidden": true, // الـ review الجديدة بتكون مخفية
         "user-email": currentUser.email
     };
 
@@ -100,9 +96,10 @@ function handleReviewSubmit(event) {
     event.target.reset();
     document.querySelectorAll('.star').forEach(star => star.classList.remove('active'));
     displayReviews();
-    alert('Thank you for your review!');
+    alert('Your review has been submitted and will be visible after approval.');
 }
 
+// Initialize star rating
 function initStarRating() {
     const stars = document.querySelectorAll('.star');
     const starsInput = document.getElementById('stars');
@@ -123,6 +120,18 @@ function initStarRating() {
     });
 }
 
+// Helper function for manual review approval
+function approveReview(reviewId) {
+    const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    const reviewIndex = reviews.findIndex(r => r.id === reviewId);
+    if (reviewIndex !== -1) {
+        reviews[reviewIndex]["is-hidden"] = false;
+        localStorage.setItem('reviews', JSON.stringify(reviews));
+        displayReviews();
+    }
+}
+
+// Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
     initializeReviews();
     displayReviews();
