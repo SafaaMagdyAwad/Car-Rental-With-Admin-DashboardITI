@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yearly rentl Report</title>
-
+    <title>Yearly Rental Report</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
     <div class="container">
         <div class="card">
@@ -16,16 +14,34 @@
     </div>
 
     <script>
+        function yearlyRent() {
+            let bookedCars = JSON.parse(localStorage.getItem("bookedCars")) || [];
+            let today = new Date();
+            let thisMonth = today.getMonth();
+
+            let carsPerMonth = new Array(31).fill(0); // days 1 to 31
+
+            bookedCars.forEach(book => {
+                let date = new Date(book["pick-up-date"]);
+                if (book["status"] === "confirmed" && date.getMonth() === thisMonth) {
+                    let day = date.getDate(); // 1 to 31
+                    carsPerMonth[day - 1]++; // index 0 to 30
+                }
+            });
+
+            return carsPerMonth;
+        }
+
         const config = {
             type: 'line',
             data: {
-                labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+                labels: Array.from({ length: 31 }, (_, i) => i + 1),
                 datasets: [{
                     label: 'Rental Data',
                     data: yearlyRent(),
                     borderColor: 'rgb(255, 99, 132)',
                     backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                    fill: true // To fill the area under the line
+                    fill: true
                 }]
             },
             options: {
@@ -33,43 +49,14 @@
                 plugins: {
                     title: {
                         display: true,
-                        text: 'My Custom Line Chart'
+                        text: 'Confirmed Rentals This Month (Daily)'
                     }
                 }
             }
         };
 
-        const ctx = document.getElementById('myChart');
+        const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, config);
-
-
-        
-        function yearlyRent() {
-            let bookedCars = JSON.parse(localStorage.getItem("bookedCars")) || [];
-            let today=new Date();
-            let thisMonth=today.getMonth();
-            console.log(thisMonth);
-            
-            let carsbermonth=new Array(31).fill(0);//the maxmum number of days
-            // console.log(bookedCars);
-            bookedCars.forEach(book => {
-                /// if book.status=confirmed
-                let date=new Date(book["pick-up-date"]);
-                if (book["status"] == "confirmed" && thisMonth==date.getMonth()) {
-                    // console.log(date.getMonth());
-                    carsbermonth[date.getDay()]++;
-                    // if(book["pick-up-date"].get)
-                }
-
-            });
-            return carsbermonth;
-        }
-
-        
-        
-        // console.log(carsbermonth);
-        
     </script>
 </body>
-
 </html>
