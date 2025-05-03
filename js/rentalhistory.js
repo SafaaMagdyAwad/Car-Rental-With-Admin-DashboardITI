@@ -23,7 +23,7 @@
       carDetailsDiv.innerHTML = `
         <div class="car-info">
           <img class="car-image" src="images/cars/${selectedCar.image || 'default-car.jpg'}" alt="${selectedCar.prand || selectedCar.type}">
-          <div class="car-details">
+          <div class="car-details text-lightblue p-4 text-center">
             <h3>${selectedCar.prand || selectedCar.type} ${selectedCar.model || ''}</h3>
             <p><span class="bold">Category:</span> ${selectedCar.category || 'N/A'}</p>
             <p><span class="bold">Type:</span> ${selectedCar.type || 'N/A'}</p>

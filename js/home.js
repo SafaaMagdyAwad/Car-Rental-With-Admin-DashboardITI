@@ -334,7 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="card shadow p-3  bg-ofwhite border-cofee rounded animation" style="height:100%">
                 <img src="images/categories/${category.image}" height="300px" width="100%"  class="card-img-top" alt="${category["category-title"]}">
                 <div class="card-body">
-                    <h3 class="card-title text-lightblue">${category["category-title"]}</h3>
+                    <h3 class="card-title text-darkblue">${category["category-title"]}</h3>
                     <a href="car-list.html" class="btn btn-primary mt-4">Explore Cars 🌟 </a>
                 </div>
             </div>

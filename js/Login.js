@@ -92,7 +92,7 @@ function handleLoginSuccess(user, rememberMe, userType) {
         localStorage.removeItem('rememberAdmin');
     }
     
-    const redirectPage = userType === 'admin' ? '/admin/admins.html' : 'index.html';
+    const redirectPage = userType === 'admin' ? '/admin' : 'index.html';
     alert(`Welcome ${user.name || user.email}! Redirecting...`);
     window.location.href = redirectPage;
 }
