@@ -65,14 +65,12 @@ export function showRentRequests(bookedCars, cars) {
                 isPending = true;
             } else if (element.status == "confirmed") {
                 isConfirmed = true;
-            }else if(element.status == "finished"){
-                isFinished = true;
             }
 
             console.log(car);
             let card = document.createElement("div");
             card.classList.add("col-12");
-            card.innerHTML = `<div class="card mb-3" ${isFinished ? 'style="opacity:0.6;"' : ""}>
+            card.innerHTML = `<div class="card mb-3" >
                         <div class="row g-0">
                             <div class="col-md-4">
                                 <img src="../../images/cars/${car.image}" class="img-fluid h-100 object-fit-cover rounded" alt="...">
