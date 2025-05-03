@@ -16,7 +16,7 @@ if(Object.keys(curentUser)==0){
     loginButton.addEventListener("click",()=>{
         sessionStorage.removeItem("currentUser");
         alert("You logged out successfully!");
-        loginButton.innerText="Login";
+        location.reload();
     });
 }
 

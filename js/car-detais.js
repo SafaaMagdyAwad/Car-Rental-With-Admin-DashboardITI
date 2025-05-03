@@ -60,7 +60,7 @@ if (Object.keys(car).length === 0) {
         }
         cursoleinner.appendChild(cursoleitem);
         let header = document.createElement("h1");
-        header.className = "text-darkblue ";
+        header.className = "text-lightblue p-4 ";
         let capitalizedElement = elemnts[i].charAt(0).toUpperCase() + elemnts[i].slice(1);
         header.innerText = `${capitalizedElement} :: ${car[elemnts[i]]}`;
         cursoleitem.appendChild(header);
