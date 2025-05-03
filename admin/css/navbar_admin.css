@@ -80,3 +80,21 @@ body{
   display: block;
 }
 
+/* code to handle side bar height */
+/* make the nav take full height */
+
+.parent-wrapper{
+  height: 100vh;
+  margin: 0;
+}
+
+.child-nav{
+  height: 100%;
+  margin: 0;
+}
+
+.child-context-wrapper{
+  height: 100%;
+  overflow-y: auto;
+  margin: 0;
+}

@@ -18,9 +18,9 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row " id="row_parent">
+        <div class="row parent-wrapper" id="row_parent">
             <!-- offcanvas -->
-            <div class="offcanvas show col-md-2 col-sm-3 " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+            <div class="offcanvas show col-md-2 col-sm-3 child-nav data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
                 id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><i class="bi bi-car-front-fill"></i>RentCar
@@ -28,6 +28,13 @@
                 </div>
                 <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0 ">
                     <ul class="navbar-nav justify-content-around align-items-center fs-5 flex-grow-1 pe-3">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link " aria-current="page" href="#" onclick=" 
+                                event.preventDefault();
+                                sessionStorage.removeItem(`currentUser`);
+                                alert(`You logged out successfully!`);
+                                location.reload();">Logout <i class="bi bi-box-arrow-right"></i></a>
+                        </li>
                         <li class="nav-item mx-2">
                             <a class="nav-link " aria-current="page" href="index.html">Dashboard</a>
                         </li>
@@ -59,7 +66,7 @@
             <!-- </div> -->
 
             <!-- dashboard content -->
-            <div class="col-md-9 col-sm-9 container ">
+            <div class="col-md-9 col-sm-9 container child-context-wrapper">
                 <!-- theme button -->
                 <button id="theme_switch">
                     <i class="bi bi-moon-fill"></i>
