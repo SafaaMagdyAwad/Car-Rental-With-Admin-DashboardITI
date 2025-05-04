@@ -28,7 +28,7 @@
             <p><span class="bold">Category:</span> ${selectedCar.category || 'N/A'}</p>
             <p><span class="bold">Type:</span> ${selectedCar.type || 'N/A'}</p>
             <p><span class="bold">Price:</span> ${selectedCar.price || 'N/A'}</p>
-            <p><span class="bold">Availability:</span> ${selectedCar.available ? 'Available' : 'Not Available'}</p>
+            <p><span class="bold">Availability:</span> ${selectedCar.avilable ? 'Available' : 'Not Available'}</p>
           </div>
         </div>
       `;
