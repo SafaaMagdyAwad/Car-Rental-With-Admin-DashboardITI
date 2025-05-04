@@ -35,9 +35,10 @@ if (reviews.length == 0) {
         usernamecell.innerText = review["user-name"];
         let createdatcell = document.createElement("td");
         createdatcell.innerHTML = review["created-at"];
-        let togglebuttoncell = document.createElement("button");
-        togglebuttoncell.innerHTML = `<i class="bi bi-toggles2"></i>`;
-        togglebuttoncell.addEventListener("click", () => {
+        let controllscell = document.createElement("td");
+        let togglebutton=document.createElement("button");
+        togglebutton.innerHTML = `<i class="bi bi-toggles2"></i>`;
+        togglebutton.addEventListener("click", () => {
             if (review["is-hidden"]) {
                 review["is-hidden"] = false;
                 // store in localStorage
@@ -50,11 +51,11 @@ if (reviews.length == 0) {
                 ishiddencell.innerHTML = `<i class="bi bi-eye-slash"></i>`;
             }
         });
-        togglebuttoncell.className = "btn btn-success mt-2 ";
-
-        let deletebuttoncell = document.createElement("button");
-        deletebuttoncell.innerHTML = `<i class="bi bi-trash"></i>`;
-        deletebuttoncell.addEventListener("click", () => {
+        togglebutton.className = "btn btn-success mt-2 ";
+        controllscell.appendChild(togglebutton);
+        let deletebutton = document.createElement("button");
+        deletebutton.innerHTML = `<i class="bi bi-trash"></i>`;
+        deletebutton.addEventListener("click", () => {
             let con = confirm("Are you sure to delete this Review");
             if (con) {
                 const index = reviews.findIndex(revi => revi.id === review.id);
@@ -62,23 +63,22 @@ if (reviews.length == 0) {
                     reviews.splice(index, 1);
                 }
                 //delete from the ui
-                let row = deletebuttoncell.closest("tr");
+                let row = deletebutton.closest("tr");
                 if (row) {
                     row.remove(); // Remove the row from the table
                 }
                 localStorage.setItem("reviews", JSON.stringify(reviews));
             }
         });
-        deletebuttoncell.className = "btn btn-danger mt-2 ";
-
+        deletebutton.className = "btn btn-danger mt-2 ";
+        controllscell.appendChild(deletebutton);
         row.appendChild(idcell);
         row.appendChild(commentcell);
         row.appendChild(starcell);
         row.appendChild(ishiddencell);
         row.appendChild(usernamecell);
         row.appendChild(createdatcell);
-        row.appendChild(togglebuttoncell);
-        row.appendChild(deletebuttoncell);
+        row.appendChild(controllscell);
         reviewsContainer.appendChild(row);
     });
 }
