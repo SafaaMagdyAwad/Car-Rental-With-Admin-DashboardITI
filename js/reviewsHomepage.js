@@ -40,11 +40,11 @@ function displayReviews() {
                 <span class="review-user">${review["user-name"]}</span>
                 <div class="review-stars">
                     ${'★'.repeat(review.stars)}${'☆'.repeat(5 - review.stars)}
-                    <span>(${review.stars}/5)</span>
+                    <span class="review-user">(${review.stars}/5)</span>
                 </div>
             </div>
-            <div class="review-date">${review["created-at"]}</div>
-            <div class="review-comment">${review.comment}</div>
+            <div class="review-date ">${review["created-at"]}</div>
+            <p class="review-comment" >${review["comment"]}</p>
         `;
         reviewsContainer.appendChild(reviewElement);
     });
